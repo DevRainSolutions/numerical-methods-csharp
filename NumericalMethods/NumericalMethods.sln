@@ -1,0 +1,139 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsForms", "WindowsForms", "{C1208B53-1C10-4639-B4F2-7268CFCE4631}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight", "{CFB4FAA1-3F62-4176-959C-E023B17C142F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{CF86D61D-A9D0-4547-9D5B-77FBDD459686}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{52962CF5-CA2C-4C03-B37F-1748EE3A83BE}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Numerical Methods Silverlight(Test)", "Numerical Methods Silverlight(Test)", "{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Numerical Methods Silverlight(Test)"
+		Debug.AspNetCompiler.PhysicalPath = "Numerical Methods Silverlight(Test)\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Numerical Methods Silverlight(Test)\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Numerical Methods Silverlight(Test)"
+		Release.AspNetCompiler.PhysicalPath = "Numerical Methods Silverlight(Test)\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Numerical Methods Silverlight(Test)\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6335"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A4828D92-E1EF-46CE-9D83-389A766D3A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.Tests", "NumericalMethods.Tests\NumericalMethods.Tests.csproj", "{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD252C69-F0AD-4614-8EB4-EB74B9077487}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		NumericalMethods.vsmdi = NumericalMethods.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.Console", "NumericalMethods.Console\NumericalMethods.Console.csproj", "{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.Library", "NumericalMethods.Library\NumericalMethods.Library.csproj", "{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs10
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = Numerical\u0020Methods\u0020Silverlight(Test)
+		SccProjectTopLevelParentUniqueName1 = NumericalMethods.sln
+		SccProjectName1 = Numerical\u0020Methods\u0020Silverlight(Test)
+		SccLocalPath1 = Numerical\u0020Methods\u0020Silverlight(Test)
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = NumericalMethods.Console\\NumericalMethods.Console.csproj
+		SccProjectTopLevelParentUniqueName2 = NumericalMethods.sln
+		SccProjectName2 = NumericalMethods.Console
+		SccLocalPath2 = NumericalMethods.Console
+		SccProjectUniqueName3 = NumericalMethods.Library\\NumericalMethods.Library.csproj
+		SccProjectTopLevelParentUniqueName3 = NumericalMethods.sln
+		SccProjectName3 = NumericalMethods.Library
+		SccLocalPath3 = NumericalMethods.Library
+		SccProjectUniqueName4 = NumericalMethods.Tests\\NumericalMethods.Tests.csproj
+		SccProjectTopLevelParentUniqueName4 = NumericalMethods.sln
+		SccProjectName4 = NumericalMethods.Tests
+		SccLocalPath4 = NumericalMethods.Tests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NumericalMethods.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3}.Release|x86.ActiveCfg = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD}.Release|x86.ActiveCfg = Release|Any CPU
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Debug|x86.ActiveCfg = Debug|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Debug|x86.Build.0 = Debug|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Release|Any CPU.ActiveCfg = Release|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Release|x86.ActiveCfg = Release|x86
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78}.Release|x86.Build.0 = Release|x86
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13D27F78-F5CF-472A-9D5A-F0FF288BB0A3} = {CFB4FAA1-3F62-4176-959C-E023B17C142F}
+		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2} = {52962CF5-CA2C-4C03-B37F-1748EE3A83BE}
+		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD} = {A4828D92-E1EF-46CE-9D83-389A766D3A9A}
+		{CD252C69-F0AD-4614-8EB4-EB74B9077487} = {A4828D92-E1EF-46CE-9D83-389A766D3A9A}
+		{E5AF1AF5-C0A3-433D-A21C-FDA617834A78} = {A4828D92-E1EF-46CE-9D83-389A766D3A9A}
+	EndGlobalSection
+EndGlobal
