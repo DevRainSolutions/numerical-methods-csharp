@@ -1,0 +1,27 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	 xmlns:liquidTreeView="clr-namespace:Liquid;assembly=Liquid.TreeView"
+	x:Class="NumericalMethods_Silverlight.Help"
+	d:DesignWidth="400" d:DesignHeight="300">
+
+	<Grid x:Name="LayoutRoot"  Background="White">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.062*"/>
+			<ColumnDefinition Width="0.878*"/>
+			<ColumnDefinition Width="0.059*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.08*"/>
+			<RowDefinition Height="0.73*"/>
+			<RowDefinition Height="0.19*"/>
+		</Grid.RowDefinitions>
+		<liquidTreeView:Tree x:Name="testTree" EnableCheckboxes="true" EnableDragAndDrop="false" Populate="Tree_Populate" Drop="Tree_Drop" NodeClick="Tree_NodeClick" Grid.Column="1" Grid.Row="1" />
+		<Canvas Grid.ColumnSpan="3">
+			<Rectangle x:Name="UpBar" MouseLeftButtonDown="UpBar_MouseLeftButtonDown" Fill="#FF647580" Stroke="Black" Height="24" Width="400" RadiusY="10" RadiusX="10"/>
+		</Canvas>
+	</Grid>
+</UserControl>

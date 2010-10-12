@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples xmlns="" >
+
+  <Category Title="Approximate">
+    <Sample src="f:\\DirrefentialEquations.rtf"  Title="Bisection Method">
+      <Syntax>
+        <![CDATA[Bisection Method]]>
+      </Syntax>
+    </Sample>
+    <Sample  src="f:\\DirrefentialEquations.rtf" 	Title="Chord Method" Description="Canvas defines an area within which you can explicitly position child elements by coordinates relative to the Canvas area.">
+      <Syntax>
+        <![CDATA[Chord Method]]>
+      </Syntax>
+    </Sample>
+    <Sample src="f:\\DirrefentialEquations.rtf"  	Title="Iteration Method"  Description="Grid defines a flexible grid area consisting of columns and rows. Child elements of a Grid can be positioned precisely using the Margin property." >
+      <Syntax>
+        <![CDATA[Iteration Method]]>
+      </Syntax>
+    </Sample>
+    <Sample  src="f:\\DirrefentialEquations.rtf"  	Title="Newton Method" Description="DockPanel defines an area within which you can arrange child elements either horizontally or vertically, relative to each other.">
+      <Syntax>
+        <![CDATA[Newton Method]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Differential Equations">
+    <Sample src="f:\\DirrefentialEquations.rtf" 	Title="Euler Simple" Description="Метод Ейлера являється найпростішим чисельним методом для розв’язання диференціальних рівнянь.">
+      <Syntax>
+        <![CDATA[Euler Simple]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Euler Modified" Description="Represents a button that can be selected and cleared by a user.">
+      <Syntax>
+        <![CDATA[Euler Modified]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Euler Corrected"  Description="Represents a selection control in a drop-down list form. The items in the ComboBox can be shown and hidden by clicking the button on the control.">
+      <Syntax>
+        <![CDATA[Euler Corrected]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Runge-Kutta4" Description="Control that allows a user to view a header that expands to display more content or collapses to save space." >
+      <Syntax>
+        <![CDATA[Runge-Kutta4]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Integration">
+    <Sample  Title="Chebishev" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[Chebishev]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Simpson" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[Simpson]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Simpson2"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[Simpson2]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Trapezium" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[Trapezium]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Interpolation">
+    <Sample  Title="Lagrange Interpolator" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Newton Interpolator" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Neville Interpolator"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Spline Interpolator" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Barycentric Interpolator" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Linear Systems">
+    <Sample  Title="Gaus" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Zeidel" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Non Linear equalization">
+    <Sample  Title="Half Division" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Hord Metod" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Newton Metod"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Secant Metod" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Matrix Algebra">
+    <Sample  Title="Matrix Determinant" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Decomposition of matrix LU" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Matrix Inverse LU"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Optimizing">
+    <Sample  Title="Brentopt" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Golden Section" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Pijavsky"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Statistics">
+    <Sample  Title="Correlation Pearson" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Correlation Spearmans Rank" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Descriptive Statistics A Dev"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Median" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Moments" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Percentile" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Random Generator">
+    <Sample  src="f:\\DirrefentialEquations.rtf"  Title="Method 1" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample src="f:\\DirrefentialEquations.rtf"  	Title="Method 2" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample src="f:\\DirrefentialEquations.rtf"  	Title="Method 3"  Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample src="f:\\DirrefentialEquations.rtf"  Title="Method 4" Description="ABOUT METHOD.">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+</Samples>

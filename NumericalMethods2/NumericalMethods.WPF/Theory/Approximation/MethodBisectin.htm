@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td align="justify"><p align="center" style="font-size: large"><b>  Method Bisection </b></p>
+                &nbsp;&nbsp;&nbsp; In mathematics, the bisection method is a root-finding algorithm
+                which repeatedly bisects an interval then selects a subinterval in which a root
+                must lie for further processing. It is a very simple and robust method, but it is
+                also relatively slow.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    <b><b>&nbsp;&nbsp;&nbsp;The method</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;The method is applicable when we wish to solve the equation f(x)=0
+                    for the scalar variable x, where f is a continuous function.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;The bisection method requires two initial points a and b such
+                    that f(a) and f(b) have opposite signs. This is called a bracket of a root, for
+                    by the intermediate value theorem the continuous function f must have at least one
+                    root in the interval (a, b). The method now divides the interval in two by computing
+                    the midpoint c = (a+b) / 2 of the interval. Unless c is itself a root--which is
+                    very unlikely, but possible--there are now two possibilities: either f(a) and f(c)
+                    have opposite signs and bracket a root, or f(c) and f(b) have opposite signs and
+                    bracket a root. We select the subinterval that is a bracket, and apply the same
+                    bisection step to it. In this way the interval that might contain a zero of f is
+                    reduced in width by 50% at each step. We continue until we have a bracket sufficiently
+                    small for our purposes.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Explicitly, if f(a) f(c) < 0, then the method sets b equal to
+                    c, and if f(b) f(c) < 0, then the method sets a equal to c. In both cases, the new
+                    f(a) and f(b) have opposite signs, so the method is applicable to this smaller interval.
+                    A practical implementation of this method must guard against the uncommon occurrence
+                    that the midpoint is indeed a solution.</p>
+                <p align="center">
+                    <b><b>&nbsp;&nbsp;&nbsp;Analysis</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;If f is a continuous function on the interval [a, b] and f(a)f(b)
+                    < 0, then the bisection method converges to a root of f. In fact, the absolute error
+                    is halved at each step. Thus, the method converges linearly, which is quite slow.
+                    On the other hand, the method is guaranteed to converge if f(a) and f(b) have different
+                    signs.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;The bisection method gives only a range where the root exists,
+                    rather than a single estimate for the root's location. Without using any other information,
+                    the best estimate for the location of the root is the midpoint of the smallest bracket
+                    found. In that case, the absolute error after n steps is at most |b-a|/2^(n+1)</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;If either endpoint of the interval is used, then the maximum absolute
+                    error is |b-a|/2^(n), the entire length of the interval</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;These formulas can be used to determine in advance the number
+                    of iterations that the bisection method would need to converge to a root to within
+                    a certain tolerance. For, using the second formula for the error, the number of
+                    iterations n has to satisfy</p>
+                <p>
+                    n>log2((b-a)/ε) to ensure that the error is smaller than the tolerance ε.</p>
+                If f has several simple roots in the interval [a,b], then the bisection method will
+                find one of them.
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

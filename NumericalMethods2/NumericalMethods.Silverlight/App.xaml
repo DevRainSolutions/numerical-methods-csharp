@@ -1,0 +1,737 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+			 xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows" 
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.Methods"
+             xmlns:SampleData1="clr-namespace:Expression.Blend.SampleData.SaveData"
+             x:Class="NumericalMethods.Silverlight.App"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <SampleData1:Numerical_Methods x:Key="SaveData" d:IsDataSource="True"/>
+            <SampleData:Samples x:Key="Methods" d:IsDataSource="True"/>
+
+
+
+            <ControlTemplate x:Key="ImageButtonTemplate" TargetType="Button">
+                <Grid Width="48" Height="36" Margin="4,4,4,4" x:Name="grid" Opacity="0.3" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <vsm:VisualStateManager.VisualStateGroups>
+                        <vsm:VisualStateGroup x:Name="ImageButtonStates">
+                            <vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualTransition GeneratedDuration="00:00:00.2000000"/>
+                            </vsm:VisualStateGroup.Transitions>
+                            <vsm:VisualState x:Name="Hot">
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.6"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="80"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="60"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </vsm:VisualState>
+                            <vsm:VisualState x:Name="Cold"/>
+                            <vsm:VisualState x:Name="Selected">
+                                <Storyboard AutoReverse="True" RepeatBehavior="Forever">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="75"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-10"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="10"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#99000000"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </vsm:VisualState>
+                        </vsm:VisualStateGroup>
+                    </vsm:VisualStateManager.VisualStateGroups>
+                    <Rectangle Margin="6,6,0,0" x:Name="rectangle">
+                        <Rectangle.Fill>
+                            <SolidColorBrush/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Fill="ForestGreen" Margin="2,2,2,2" Stroke="#4C2F2F2F"/>
+                    <Image Margin="4,6,4,6" Source="{TemplateBinding Content}" Stretch="Fill" IsHitTestVisible="False" />
+                </Grid>
+            </ControlTemplate>
+            <ControlTemplate x:Key="ImageCaptionTemplate" TargetType="Button">
+                <Grid>
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Rectangle RadiusY="5" RadiusX="5" Fill="#66FFFFFF" Stroke="#B2FFFFFF"/>
+                        <TextBlock Margin="8" Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </Grid>
+            </ControlTemplate>
+            <ControlTemplate x:Key="LargeImagetemplate" TargetType="Button">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid Width="500" Height="375">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="Focused"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Rectangle Fill="AliceBlue"/>
+                        <Image Margin="8" Source="{TemplateBinding Content}"/>
+                    </Grid>
+
+                </StackPanel>
+            </ControlTemplate>
+
+
+            <!--***************** ImageButtonTemplate ********************-->
+
+            <ControlTemplate x:Key="ImageButtonBar" TargetType="Button">
+                <Grid Cursor="Hand">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="FocusStates">
+                            <VisualState x:Name="Unfocused"/>
+                            <VisualState x:Name="Focused"/>
+                        </VisualStateGroup>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="00:00:00.5000000"/>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="MouseOver">
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Collapsed</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="DisabledImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Visible</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Normal"/>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <VisualStateManager.CustomVisualStateManager>
+                        <ic:ExtendedVisualStateManager/>
+                    </VisualStateManager.CustomVisualStateManager>
+                    <Image Margin="0" x:Name="NormalImage" RenderTransformOrigin="0.5,0.5" Source="{TemplateBinding Content}">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <ContentPresenter Margin="5,0,0,0" x:Name="theContent" Width="Auto" RenderTransformOrigin="0.5,0.5" Content="" Opacity="0">
+                        <ContentPresenter.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentPresenter.RenderTransform>
+                    </ContentPresenter>
+                </Grid>
+            </ControlTemplate>
+
+
+
+            <!--**************** Modify   ****************** -->
+            <ControlTemplate x:Key="ImageModify" TargetType="Button">
+                <Grid Cursor="Hand">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="FocusStates">
+                            <VisualState x:Name="Unfocused"/>
+                            <VisualState x:Name="Focused"/>
+                        </VisualStateGroup>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="00:00:00.3000000"/>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="MouseOver">
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Collapsed</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="DisabledImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Visible</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Normal"/>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <VisualStateManager.CustomVisualStateManager>
+                        <ic:ExtendedVisualStateManager/>
+                    </VisualStateManager.CustomVisualStateManager>
+                    <Image Margin="0" x:Name="NormalImage" RenderTransformOrigin="0.5,0.5" Source="Image/pen.png">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <ContentPresenter HorizontalAlignment="Center" Margin="5,0,0,0" x:Name="theContent" VerticalAlignment="Center" Width="Auto" RenderTransformOrigin="0.5,0.5">
+                        <ContentPresenter.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentPresenter.RenderTransform>
+                    </ContentPresenter>
+                </Grid>
+            </ControlTemplate>
+
+            <!--**************** About->Exit  ****************** -->
+            <ControlTemplate x:Key="ImageAboutExit" TargetType="Button">
+                <Grid Cursor="Hand">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="FocusStates">
+                            <VisualState x:Name="Unfocused"/>
+                            <VisualState x:Name="Focused"/>
+                        </VisualStateGroup>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="00:00:00.3000000"/>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="MouseOver">
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.25"/>
+                                        <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.4"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="theContent" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.8"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="NormalImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Collapsed</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                    <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="DisabledImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Visible</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Normal"/>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <VisualStateManager.CustomVisualStateManager>
+                        <ic:ExtendedVisualStateManager/>
+                    </VisualStateManager.CustomVisualStateManager>
+                    <Image Margin="0" x:Name="NormalImage" RenderTransformOrigin="0.5,0.5" Source="Image/Exit.png">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <ContentPresenter HorizontalAlignment="Center" Margin="5,0,0,0" x:Name="theContent" VerticalAlignment="Center" Width="Auto" RenderTransformOrigin="0.5,0.5">
+                        <ContentPresenter.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentPresenter.RenderTransform>
+                    </ContentPresenter>
+                </Grid>
+            </ControlTemplate>
+
+            <!--*************FullscreenButtonTemplate*************-->
+            <ControlTemplate x:Key="FullscreenButtonTemplate" TargetType="Button">
+                <Grid>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="FocusStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="00:00:00.2000000"/>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="Unfocused"/>
+                            <VisualState x:Name="Focused">
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HighlightRect" Storyboard.TargetProperty="(UIElement.Opacity)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="00:00:00.2000000"/>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="MouseOver">
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonRect" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#CCFFFFFF"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonRect" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#7FE0E0E0"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Pressed">
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonRect" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#7F8B8B8B"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonRect" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#4C5A5A5A"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonRect" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" BeginTime="00:00:00" Duration="00:00:00.0010000">
+                                        <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF353535"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Disabled"/>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+
+                    <Canvas Width="50" Height="50">
+                        <Rectangle Height="50" Width="50" Canvas.Left="0" Canvas.Top="0" RadiusX="8" RadiusY="8" Stroke="#FF8D8D8D" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeStartLineCap="Flat" StrokeThickness="1.00" x:Name="ButtonRect">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="30.4317207254458,18.3789266230969" EndPoint="30.4317207254458,31.8452775196664" MappingMode="Absolute" SpreadMethod="Pad">
+                                    <GradientStop Color="#7FFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#4CE0E0E0" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Height="48" Width="48" Canvas.Left="1" Canvas.Top="1" RadiusX="7" RadiusY="7" Stroke="#FF67CEFF" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeStartLineCap="Flat" StrokeThickness="1" Opacity="0" x:Name="HighlightRect"/>
+                        <Canvas>
+                            <Path x:Name="rect3818" Stroke="#FF8D8D8D" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M14.04,14.50L34.96,14.50L34.96,14.50C35.26,14.50,35.50,14.74,35.50,15.04C35.50,15.04,35.50,15.04,35.50,15.04L35.50,15.04L35.50,33.96L35.50,33.96C35.50,34.26,35.26,34.50,34.96,34.50L34.96,34.50L14.04,34.50L14.04,34.50C13.74,34.50,13.50,34.26,13.50,33.96C13.50,33.96,13.50,33.96,13.50,33.96L13.50,33.96L13.50,15.04L13.50,15.04C13.50,14.74,13.74,14.50,14.04,14.50">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="30.4317207254458,18.3789266230969" EndPoint="30.4317207254458,31.8452775196664" MappingMode="Absolute" SpreadMethod="Pad">
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFE0E0E0" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path x:Name="rect3820" Data="M15.10,16.00L33.90,16.00L33.90,16.00C33.95,16.00,34.00,16.04,34.00,16.10C34.00,16.10,34.00,16.10,34.00,16.10L34.00,16.10L34.00,18.90L34.00,18.90C34.00,18.96,33.95,19.00,33.90,19.00L33.90,19.00L15.10,19.00C15.05,19.00,15.00,18.96,15.00,18.90C15.00,18.90,15.00,18.90,15.00,18.90L15.00,18.90L15.00,16.10L15.00,16.10C15.00,16.04,15.05,16.00,15.10,16.00">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="24.2120520450668,19.6614773047922" EndPoint="24.2120520450668,12.7817549333435" MappingMode="Absolute" SpreadMethod="Pad">
+                                        <GradientStop Color="#FF204A87" Offset="0"/>
+                                        <GradientStop Color="#00204A87" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path x:Name="rect4962" Stroke="#7AFFFFFF" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M14.69,15.50L34.31,15.50L34.31,15.50C34.42,15.50,34.50,15.57,34.50,15.66C34.50,15.66,34.50,15.66,34.50,15.66L34.50,15.66L34.50,33.34L34.50,33.34C34.50,33.43,34.42,33.50,34.31,33.50L34.31,33.50L14.69,33.50L14.69,33.50C14.58,33.50,14.50,33.43,14.50,33.34C14.50,33.34,14.50,33.34,14.50,33.34L14.50,33.34L14.50,15.66L14.50,15.66C14.50,15.57,14.58,15.50,14.69,15.50"/>
+                            <Path x:Name="path2886" Fill="#FF729FCF" Stroke="#FF204A87" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M39.50,21.22L39.50,28.78L45.06,25.00L39.50,21.22z"/>
+                            <Path x:Name="path2888" Fill="#FF729FCF" Stroke="#FF204A87" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M9.50,21.22L9.50,28.78L3.94,25.00L9.50,21.22z"/>
+                            <Path x:Name="path2890" Fill="#FF729FCF" Stroke="#FF204A87" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M28.28,38.50L20.72,38.50L24.50,44.06L28.28,38.50z"/>
+                            <Path x:Name="path2892" Fill="#FF729FCF" Stroke="#FF204A87" StrokeThickness="1.00" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeDashCap="Flat" StrokeLineJoin="Miter" StrokeMiterLimit="4" StrokeDashOffset="0" Data="M28.28,10.50L20.72,10.50L24.50,4.94L28.28,10.50z"/>
+                        </Canvas>
+                    </Canvas>
+                </Grid>
+            </ControlTemplate>
+            <Style x:Key="ButtonStart" TargetType="Button">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Cursor="Hand">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#F2FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#7FFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#FF6DBDD1"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#D8FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#C6FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#8CFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#3FFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="Background" Background="White" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                    <Grid Margin="1" Background="{TemplateBinding Background}">
+                                        <Border x:Name="BackgroundAnimation" Opacity="0" Background="#FF448DCA" CornerRadius="20"/>
+                                        <Rectangle x:Name="BackgroundGradient" RadiusY="20" RadiusX="20">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                                    <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                                    <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <Rectangle Stroke="#FFC4C7CA"  StrokeThickness="1" RadiusX="20" RadiusY="20">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush StartPoint="0.814,1.652" EndPoint="0.772,-0.087">
+                                                    <GradientStop Color="#FFFA0000" Offset="0.832"/>
+                                                    <GradientStop Color="#FFE5ADB3" Offset="1"/>
+                                                    <GradientStop Color="#FFC37D7D" Offset="0.212"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Content=""/>
+                                <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" RadiusX="20" RadiusY="20" IsHitTestVisible="false" Opacity="0" StrokeThickness="6"/>
+                                <Rectangle x:Name="FocusVisualElement" Stroke="#FF6DBDD1" StrokeThickness="5" RadiusX="20" RadiusY="20" Margin="1" IsHitTestVisible="false" Opacity="0"/>
+                                <Path Fill="Transparent" Stretch="Fill" Stroke="#FFDEEDF6" StrokeThickness="5" Height="30" UseLayoutRounding="False" Data="M55.5,10.500348 C41.077187,8.09657 -25.912994,-1.9885856 40.5,44.499924 C45.375259,47.912552 51.232323,51.16143 52.5,57.49976 C54.271889,66.359116 55.681934,66.674934 42.5,69.499611 C22.391815,73.808456 17.434448,73.447128 2.5,61.49971 M94.5,7.5 C94.5,28.98526 92.694519,49.297089 92.5,70.5 M68.5,7.5 C85.355904,8.3513031 102.33452,8.5 119.5,8.5 M146.5,7.5 C133.48338,27.982025 127.50479,43.48082 121.5,67.5 M145.5,10.5 C158.47049,28.526779 164.77425,43.944229 170.5,65.5 M127.5,48.5 C139.5,48.5 151.5,48.5 163.5,48.5 M186.5,4.5 C186.5,26.142487 188.85399,46.620804 187.50031,67.5 M186.5,6.5 C198.19113,7.1047058 260.72772,22.122757 190.50002,40.5 M190.5,41.5 C212.67467,46.802643 212.84711,43.301956 225.5,65.5 M262.5,2.5 C262.5,22.833328 262.5,43.166672 262.5,63.5 M235.5,4.5 C254.13266,5.408905 273.30426,5.5 292.5,5.5" Width="100" Margin="22.5,8,19.5,6" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ButtonAboutStart" TargetType="Button">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#F2FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#7FFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#FF6DBDD1"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#D8FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#C6FFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#8CFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                                    <SplineColorKeyFrame KeyTime="0" Value="#3FFFFFFF"/>
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="Background" Background="White" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                    <Grid Margin="1" Background="{TemplateBinding Background}">
+                                        <Border x:Name="BackgroundAnimation" Opacity="0" Background="#FF448DCA"/>
+                                        <Rectangle x:Name="BackgroundGradient" RadiusY="20" RadiusX="20">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                                    <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                                    <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <Rectangle Stroke="#FFC4C7CA" StrokeThickness="1" RadiusX="20" RadiusY="20">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush StartPoint="0.814,1.652" EndPoint="0.772,-0.087">
+                                                    <GradientStop Color="#FF538BDE" Offset="0.832"/>
+                                                    <GradientStop Color="#FF6ABFF6" Offset="1"/>
+                                                    <GradientStop Color="#FF104DA4" Offset="0.212"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Content=""/>
+                                <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" RadiusX="3" RadiusY="3" IsHitTestVisible="false" Opacity="0"/>
+                                <Rectangle x:Name="FocusVisualElement" Stroke="#FF6DBDD1" StrokeThickness="1" RadiusX="2" RadiusY="2" Margin="1" IsHitTestVisible="false" Opacity="0"/>
+                                <Path RenderTransformOrigin="0,0" Fill="#FFFFFFFF" Stretch="Fill" Data="M4.947,3.3536665 C4.9650002,3.3556664 4.9879999,3.3866663 5.0159998,3.4466662 C5.04,3.5106664 5.1479998,4.0706663 5.3400002,5.1266665 C5.5398397,6.189815 5.6358466,6.7337952 5.6279998,6.7586665 C5.6195803,6.7668343 5.5796227,6.7827921 5.5079999,6.8066664 C5.4359889,6.8306694 5.3239923,6.8586679 5.1719999,6.8906665 C5.0120001,6.9306664 4.8740001,6.9566665 4.7579999,6.9686666 C4.6420002,6.9806662 4.5440001,6.9866667 4.4640002,6.9866667 L4.3319998,6.9626665 C4.3080015,6.922657 4.3840013,6.4066572 4.5599999,5.4146667 C4.6719999,4.7826662 4.756,4.3026667 4.8119998,3.9746666 C4.868,3.6466665 4.9000001,3.4666662 4.908,3.4346666 z M7.3200002,0.9746666 L3.408,1.6706667 C3.28,1.6786661 3.204,1.7266665 3.1800001,1.8146667 C3.1400001,1.9506664 3.076,2.1846666 2.9879999,2.5166664 C2.9000001,2.8486667 2.7920001,3.2786665 2.664,3.8066664 C2.576,4.1826663 2.3959999,4.9466662 2.1240001,6.0986667 C1.852,7.2506666 1.488,8.8066664 1.0319999,10.766666 C2.5999999,10.566667 3.4760001,10.446667 3.6600001,10.406667 C3.6919999,10.390666 3.7119999,10.366667 3.72,10.334666 C3.7679999,10.110666 3.8640001,9.5826664 4.0079999,8.7506666 L5.9159999,8.4506664 C6.0359998,8.4186668 6.1079998,8.4666662 6.132,8.5946665 L6.5279999,10.514667 L9.54,10.178666 C9.3559999,9.3546667 9.1800003,8.574667 9.0120001,7.8386664 C8.8439999,7.1026664 8.6759996,6.3946667 8.5080004,5.7146664 z M7.8839998,0.35066605 C8.1879997,1.6706667 8.46,2.8366666 8.6999998,3.8486667 C8.9399996,4.8606663 9.1560001,5.7306666 9.3479996,6.4586663 C9.4919996,7.0266666 9.6520004,7.6506662 9.8280001,8.3306665 C10.004,9.0106668 10.188,9.758666 10.38,10.574666 L6.0479999,11.198667 C5.9759998,10.734667 5.8800001,10.258666 5.7600002,9.7706661 L5.6160002,9.1946659 C5.0159998,9.258666 4.6680002,9.3066664 4.572,9.3386669 C4.547997,9.346673 4.5279989,9.3986731 4.5120001,9.4946661 C4.5120001,9.6066666 4.4640002,10.082666 4.368,10.922667 L0.16800009,11.522667 C1.632,5.1466665 2.464,1.6946669 2.664,1.166666 C2.6963227,1.1506158 4.4363194,0.87861794 7.8839998,0.35066605 z M15.193333,6.3506665 C15.145332,6.3506665 15.079333,6.3566666 14.995333,6.3686666 C14.911333,6.3806663 14.805333,6.4066663 14.677334,6.4466662 L14.329333,6.5426664 L14.365334,7.6706667 L15.013333,7.7786665 C15.357333,7.7226667 15.541333,7.4906664 15.565333,7.0826664 C15.597334,6.5946665 15.473333,6.3506665 15.193333,6.3506665 z M15.205334,5.7506666 C15.781334,5.7506666 16.117332,6.0066667 16.213333,6.5186663 C16.229334,6.5986667 16.241333,6.6726665 16.249332,6.7406664 C16.257334,6.8086662 16.261333,6.8746662 16.261333,6.9386663 C16.261333,7.3786664 16.125334,7.7226667 15.853333,7.9706664 C15.573334,8.2266665 15.201334,8.3426666 14.737333,8.3186665 C14.409333,8.3026667 14.101334,8.2266665 13.813334,8.0906668 L13.753333,6.0746665 C14.353333,5.8586664 14.837334,5.7506666 15.205334,5.7506666 z M13.837334,1.1786662 L11.449333,1.322666 L11.929334,10.670667 L13.957334,10.538667 L13.897333,9.2786665 C14.425333,9.7826662 15.025333,10.062666 15.697333,10.118667 C16.609333,10.190666 17.245333,9.8946667 17.605333,9.2306662 C17.877333,8.7346668 18.001333,7.9786663 17.977333,6.9626665 C17.953333,6.0186663 17.809334,5.3426666 17.545334,4.9346666 C17.201334,4.3986664 16.593334,4.1586666 15.721334,4.2146664 C15.057333,4.2626662 14.433333,4.4826665 13.849333,4.8746662 z M14.485333,0.57866669 L14.437333,3.9506664 C14.997334,3.7106667 15.537333,3.5906663 16.057333,3.5906663 C16.921333,3.5906663 17.593334,3.9186664 18.073334,4.5746665 C18.473333,5.1186666 18.673332,5.9466662 18.673332,7.0586662 L18.409332,8.9786663 C18.225334,9.5626659 17.945333,9.9986668 17.569334,10.286667 C17.193333,10.566667 16.701334,10.710667 16.093334,10.718666 C15.541333,10.734667 14.997334,10.622666 14.461333,10.382667 L14.521334,10.958667 L11.353333,11.234667 L11.101334,5.4506664 L10.801333,0.84266669 z M22.536001,5.5346665 C22.248001,5.5346665 22.004002,5.6426663 21.804001,5.8586664 C21.604,6.0826664 21.504002,6.3546662 21.504002,6.6746664 C21.504002,6.9946661 21.604,7.2586665 21.804001,7.4666662 C22.004002,7.6906662 22.248001,7.8026667 22.536001,7.8026667 C22.808001,7.8026667 23.048,7.6946664 23.256001,7.4786663 C23.464001,7.2466664 23.568001,6.9786663 23.568001,6.6746664 C23.568001,6.3626666 23.468,6.0946665 23.268002,5.8706665 C23.068001,5.6466665 22.824001,5.5346665 22.536001,5.5346665 z M22.536001,4.8626666 C22.984001,4.8626666 23.372002,5.0386662 23.700001,5.3906665 C24.02,5.7426662 24.18,6.1706662 24.18,6.6746664 C24.18,7.1786661 24.02,7.6026664 23.700001,7.9466667 C23.372002,8.298666 22.984001,8.4746666 22.536001,8.4746666 C22.080002,8.4746666 21.688002,8.298666 21.360001,7.9466667 C21.040001,7.6026664 20.880001,7.1786661 20.880001,6.6746664 C20.880001,6.1706662 21.040001,5.7466664 21.360001,5.4026666 C21.68,5.0426664 22.072001,4.8626666 22.536001,4.8626666 z M22.596001,3.4706664 C21.764,3.4866667 21.052002,3.8306665 20.460001,4.5026665 C19.868,5.1746664 19.560001,5.9546666 19.536001,6.8426666 C19.512001,7.7946663 19.804001,8.6026669 20.412001,9.2666664 C21.028,9.9466667 21.756001,10.266666 22.596001,10.226666 C23.460001,10.186666 20.082172,9.850666 20.666172,9.2186661 C21.258171,8.5626659 25.656002,7.7706661 25.656002,6.8426666 C25.656002,5.8986664 25.352001,5.0986667 24.744001,4.4426665 C24.136002,3.7866664 23.420002,3.4626665 22.596001,3.4706664 z M22.596001,2.7986665 C23.644001,2.7986665 24.516001,3.1906667 25.212002,3.9746666 C25.916,4.7506666 26.268002,5.7066665 26.268002,6.8426666 C26.268002,7.9546661 25.912001,8.9106665 25.200001,9.7106667 C24.480001,10.502666 23.612001,10.898666 22.596001,10.898666 C21.580002,10.898666 20.712002,10.502666 19.992001,9.7106667 C19.272001,8.9186668 18.912001,7.9626665 18.912001,6.8426666 C18.912001,5.7306666 19.272001,4.7786665 19.992001,3.9866667 C20.712002,3.1946664 21.580002,2.7986665 22.596001,2.7986665 z M33.804001,3.8666663 L31.32,4.0106664 L31.355999,6.8066664 C31.364014,6.8388128 31.368,6.8827596 31.368,6.9386663 C31.368,6.9866743 31.372,7.0426707 31.379999,7.1066666 L31.379999,7.4186664 C31.379999,7.9626665 31.139999,8.246666 30.66,8.2706661 C30.139999,8.2946663 29.807999,8.0706663 29.664,7.5986662 C29.504,7.0706663 29.435999,6.0946665 29.459999,4.6706662 L29.472,3.9506664 L27.552,4.0346665 L27.552,6.1946664 C27.552,6.9546661 27.576,7.5746665 27.624001,8.0546665 C27.768,9.5266666 28.288,10.326667 29.184,10.454666 C30.056,10.502666 30.812,10.182667 31.452,9.4946661 L31.452,10.394667 L33.924,10.154667 z M34.332001,3.2546663 L34.475998,10.634666 L31.032,10.958667 L31.02,10.382667 C30.66,10.742666 30.175999,10.938666 29.567999,10.970667 C28.152,11.058666 27.299999,10.246666 27.011999,8.5346661 C26.972,8.3266659 26.941999,8.0666666 26.921999,7.7546663 C26.902,7.4426665 26.892,7.0786667 26.892,6.6626663 L26.892,4.7906666 L26.879999,3.5426664 L30.18,3.3386664 L30.071999,5.0066667 C30.056,5.2946663 30.053999,5.6306663 30.066,6.0146666 C30.077999,6.3986664 30.115999,6.8426666 30.18,7.3466663 C30.203999,7.5946665 30.32,7.7106667 30.528,7.6946664 C30.712,7.6786661 30.803999,7.5586662 30.803999,7.3346663 C30.812,7.1026664 30.813999,6.8286667 30.809999,6.5126662 C30.806,6.1966534 30.796,5.8386593 30.779999,5.4386663 L30.719999,3.4826665 z M38.639332,1.5866661 L36.707333,1.8506659 L36.767334,2.8106666 C36.783333,2.9946666 36.791332,3.1786666 36.791332,3.3626666 C36.791332,3.5386662 36.791332,3.7066665 36.791332,3.8666663 L35.495331,3.9746666 L35.507332,5.6186666 L36.875332,5.4746666 L36.875332,10.154667 L38.639332,9.9386663 L38.603333,5.4026666 L39.887333,5.3186665 C39.887333,4.3426666 39.875332,3.7986665 39.851334,3.6866665 C39.771328,3.6786668 39.355328,3.7026665 38.603333,3.7586665 C38.627331,3.3986664 38.639332,3.0146666 38.639332,2.6066666 z M39.179333,0.89066601 L39.143333,3.2186666 L40.415333,3.1226664 L40.463333,5.9306664 L39.275333,5.9546666 C39.275333,6.7706661 39.279331,7.4526663 39.287331,8.0006666 C39.295334,8.548666 39.311333,8.9706669 39.335331,9.2666664 L39.431332,10.490666 L36.23933,10.838667 L36.275333,9.6026669 C36.315331,8.4106665 36.303333,7.2306662 36.23933,6.0626664 L35.051331,6.2306666 L34.919331,3.3746662 C35.023399,3.3826678 35.131367,3.3846653 35.243332,3.3806663 C35.355331,3.3766665 35.47533,3.3706665 35.603333,3.3626666 C35.65134,3.3546653 35.725334,3.3466659 35.825333,3.3386664 C35.925331,3.3306665 36.051331,3.3186665 36.203331,3.3026667 C36.195332,2.6306667 36.13533,1.9506664 36.023331,1.2626668 z" Stroke="#FFDEEDF6" UseLayoutRounding="False" Margin="33.874,6.437,33.831,11.563">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                            <SkewTransform AngleX="0" AngleY="0"/>
+                                            <RotateTransform Angle="0"/>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

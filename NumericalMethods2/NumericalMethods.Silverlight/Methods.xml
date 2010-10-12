@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples xmlns="" >
+
+  <Category Title="Approximate">
+
+    <Sample Title="Bisection Method" src="/Data/Approximation/MethodBisectin.jpg" >
+      <Syntax>
+        <![CDATA[ 
+	public Bisection(FunctionOne f,double Left, double Right, double epsilon)
+        {
+            bool blnError = false;
+            double c;
+            do
+            {
+                c = (Left + Right) / 2;
+                if (f(Left) * f(c) < 0)
+                    Right = c;
+                else
+                    Left = c;
+                if (f(c) == 0)
+                {
+                    blnError = (f(c - epsilon / 2) * f(c + epsilon / 2) < 0) ? false : true;
+                    break;
+                }
+            }
+            while ((f(c)) > epsilon || (Right - Left) > epsilon);
+            if (blnError == false)
+            {
+                result = c;
+            }
+        }]]>
+      </Syntax>
+    </Sample>
+
+    <Sample Title="Chord Method" src="/Data/Approximation/MethoHord.jpg" >
+        <Syntax>
+        <![CDATA[
+ 	public Сhord(FunctionOne function,FunctionOne df, double Left, double Right, double x0, double epsilon)
+        {
+            double xl;
+            const double m = 2.41064f;
+            const double M = 20.0828f;
+            double xk;
+            xk = x0 - (function(x0) / df(x0));
+            do
+            {
+                xl = xk - function(xk) * (xk - x0) / (function(xk) - function(x0));
+                x0 = xk;
+                xk = xl;
+            }
+            while (Math.Abs(xk - x0) > Math.Sqrt(Math.Abs(2f * epsilon * m / M)));
+            result = x0;
+        }
+]]>
+       </Syntax>
+   </Sample>
+
+    <Sample Title="Iteration Method" src="/Data/Approximation/MethodBisectin.jpg" >
+      <Syntax>
+        <![CDATA[Iteration Method]]>
+      </Syntax>
+    </Sample>
+
+    <Sample Title="Newton Method" src="/Data/Approximation/MethodBisectin.jpg" >
+      <Syntax>
+        <![CDATA[Newton Method]]>
+      </Syntax>
+    </Sample>
+
+  </Category>
+
+
+  <Category Title="Differential Equations">
+    <Sample Title="Euler Simple" src="/Data/DifferentialEquations/DirrefentialEquations.jpg">
+      <Syntax>
+        <![CDATA[Euler Simple]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Euler Modified" src="/Data/DifferentialEquations/DirrefentialEquations.jpg">
+      <Syntax>
+        <![CDATA[Euler Modified]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Euler Corrected"  src="/Data/DifferentialEquations/DirrefentialEquations.jpg">
+      <Syntax>
+        <![CDATA[Euler Corrected]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Runge-Kutta4" src="/Data/DifferentialEquations/DirrefentialEquations.jpg">
+      <Syntax>
+        <![CDATA[Runge-Kutta4]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Integration">
+    <Sample  Title="Chebishev" src="/Data/Integration/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[Chebishev]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Simpson" src="/Data/Integration/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[Simpson]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Simpson2"  src="/Data/Integration/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[Simpson2]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Trapezium" src="/Data/Integration/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[Trapezium]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Interpolation">
+    <Sample  Title="Lagrange Interpolator" src="/Data/Interpolation/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Newton Interpolator" src="/Data/Interpolation/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Neville Interpolator"  src="/Data/Interpolation/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Spline Interpolator" src="/Data/Interpolation/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Barycentric Interpolator" src="/Data/Interpolation/AllMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Linear Systems">
+    <Sample  Title="Gaus" src="/Data/LinearSystems/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Zeidel" src="/Data/LinearSystems/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Non Linear equalization">
+    <Sample  Title="Half Division" src="/Data/NonLinear/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Hord Metod" src="/Data/NonLinear/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Newton Metod" src="/Data/NonLinear/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Secant Metod" src="/Data/NonLinear/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Matrix Algebra">
+    <Sample  Title="Matrix Determinant" src="/Data/MatrixAlgebra/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Decomposition of matrix LU" src="/Data/MatrixAlgebra/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Matrix Inverse LU"  src="/Data/MatrixAlgebra/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Optimizing">
+    <Sample  Title="Brentopt" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Golden Section" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Pijavsky" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Statistics">
+    <Sample  Title="Correlation Pearson" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample 	Title="Correlation Spearmans Rank" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  	Title="Descriptive Statistics A Dev"  src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Median" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Moments" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample   	Title="Descriptive Statistics Percentile" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+  <Category Title="Random Generator">
+    <Sample  Title="Method 1" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample Title="Method 2" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[  TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample Title="Method 3" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+    <Sample  Title="Method 4" src="/Data/Optimizing/allMethods.JPG">
+      <Syntax>
+        <![CDATA[TEST INFORMATION]]>
+      </Syntax>
+    </Sample>
+  </Category>
+
+
+</Samples>

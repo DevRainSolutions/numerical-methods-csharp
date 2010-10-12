@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td align="justify">
+                <p align="center" style="font-size: large"><b> Euler Simple </b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;In mathematics and computational science, the Euler method, named
+                    after Leonhard Euler, is a first-order numerical procedure for solving ordinary
+                    differential equations (ODEs) with a given initial value. It is the most basic kind
+                    of explicit method for numerical integration for ordinary differential equations.</p>
+                <p align="center">
+                    <b><b>Informal geometrical description</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Consider the problem of calculating the shape of an unknown curve
+                    which starts at a given point and satisfies a given differential equation. Here,
+                    a differential equation can be thought of as a formula by which the slope of the
+                    tangent line to the curve can be computed at any point on the curve, once the position
+                    of that point has been calculated. The idea is that while the curve is initially
+                    unknown, its starting point, which we denote by A0, is known (see the picture on
+                    top right). Then, from the differential equation, the slope to the curve at A0 can
+                    be computed, and so, the tangent line. Take a small step along that tangent line
+                    up to a point A1. If we pretend that A1 is still on the curve, the same reasoning
+                    as for the point A0 above can be used. After several steps, a polygonal curve is
+                    computed. In general, this curve does not diverge too far from the original unknown
+                    curve, and the error between the two curves can be made small if the step size is
+                    small enough and the interval of computation is finite (although things are more
+                    complicated for stiff equations, as discussed below).</p>
+                <p align="center">
+                    <b><b>Derivation</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; We want to approximate the solution of the initial value problem
+                    y'(t)=f(t,y(t)), y(t0)=y0 by using the first two terms of the Taylor expansion of
+                    y, which represents the linear approximation around the point (t0,y(t0)) . One step
+                    of the Euler method from tn to tn+1 = tn + h is
+                </p>
+                <p>
+                    Yn+1=Yn+hf(Tn,Yn)</p>
+                &nbsp;&nbsp;&nbsp; The Euler method is explicit, i.e. the solution Yn+1 is an explicit
+                function of Yi for .
+                <p>
+                    &nbsp;&nbsp;&nbsp;While the Euler method integrates a first order ODE, any ODE of
+                    order N can be represented as a first-order ODE in more than one variable by introducing
+                    N − 1 further variables, y', y'', ..., y(N), and formulating N first order equations
+                    in these new variables. The Euler method can be applied to the vector
+                </p>
+                <p>
+                    y(t)=(y(t),y'(t),y"(t),..,y^(n)(t)) to integrate the higher-order system.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

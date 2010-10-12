@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td align="justify">
+            <p align="center" style="font-size: large"><b>  Method Hord </b></p>
+                &nbsp;&nbsp;&nbsp;Method of chords - iterative method for finding roots of the equation.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b><b>&nbsp;&nbsp;&nbsp;Geometric description</b></b>
+                <p>
+                    &nbsp;&nbsp;&nbsp;We seek the root of f (x). Choose two initial points C1 (x1; y1)
+                    and C2 (x2; y2) and draw through them directly. It crosses the x-axis at the point
+                    (x3; 0). Now we find the value function with the abscissa x3. Temporarily, we assume
+                    x3 root on the interval [x1; x2]. Suppose that C3 has abstsisu x3 and lies on the
+                    graph. Now, instead of points C1 and C2, we take the point of C3 and the point C2.
+                    Now with these two points do the tighter operation and so on, ie will receive two
+                    points of Cn + 1, and Cn and repeat the operation with them. Thus we will get two
+                    points, the segment connecting that crosses the x-axis at the point, the value of
+                    the abscissa which can be approximated by the roots. These actions need to be repeated
+                    until we get the value of the root with the right approach to us.</p>
+                <p align="center">
+                    <b><b>Algebraic description of the method</b></b></p>
+                <p>
+                    Let x1, x2 - abscissa ends of the chord, y = kx + b - equation of the line containing
+                    the chord. We find the coefficients k and b of the system of equations:</p>
+                f(x1)=kx1+b f(x2)=kx2+b
+                <p>
+                    &nbsp;&nbsp;&nbsp;Subtract from the first equation of the second: f (x1) - f (x2)
+                    = k (x1 - x2), then find the coefficients k and b:</p>
+                k=(f(x2)-f(x1)/(x2-x1)) then b=f(x1)-(f(x2)-f(x1)*x1/(x2-x1))
+                <p>
+                    The equation becomes:</p>
+                y=(f(x2)-f(x1)/(x2-x1))*(x-x1)+f(x1)
+                <p>
+                    &nbsp;&nbsp;&nbsp;So, now we can find a first approximation to the root, obtained
+                    by the method of chords:</p>
+                x3=x1-)(x2-x1)*f(x1))/(f(x2)-f(x1))
+                <p>
+                    &nbsp;&nbsp;&nbsp;Now we take the coordinates x2 and x3, and everything was done
+                    to repeat the operation, finding a new approach to the root. Repeat the operation
+                    should be up until xn - xn - 1 can not be less than or equal to the value of the
+                    error.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

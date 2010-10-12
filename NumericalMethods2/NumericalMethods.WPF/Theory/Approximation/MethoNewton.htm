@@ -1,0 +1,185 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td align="justify">
+                    <p align="center" style="font-size: large"><b>  Method Newton </b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;In numerical analysis, Newton's method (also known as the Newton–Raphson
+                    method), named after Isaac Newton and Joseph Raphson, is perhaps the best known
+                    method for finding successively better approximations to the zeroes (or roots) of
+                    a real-valued function. Newton's method can often converge remarkably quickly, especially
+                    if the iteration begins "sufficiently near" the desired root. Just how near "sufficiently
+                    near" needs to be, and just how quickly "remarkably quickly" can be, depends on
+                    the problem. This is discussed in detail below. Unfortunately, when iteration begins
+                    far from the desired root, Newton's method can easily lead an unwary user astray
+                    with little warning. Thus, good implementations of the method embed it in a routine
+                    that also detects and perhaps overcomes possible convergence failures.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; Given a function ƒ(x) and its derivative ƒ '(x), we begin with
+                    a first guess x0. Provided the function is reasonably well-behaved a better approximation
+                    x1 is</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;We then repeat the same process to get better approximations still,
+                    until we reach a sufficiently accurate solution.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;An important and somewhat surprising application is Newton–Raphson
+                    division, which can be used to quickly find the reciprocal of a number using only
+                    multiplication and subtraction.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;The algorithm is first in the class of Householder's methods,
+                    succeeded by Halley's method.</p>
+                <p align="center">
+                    <b><b>Description of the method</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;An illustration of one iteration of Newton's method (the function
+                    ƒ is shown in blue and the tangent line is in red). We see that xn+1 is a better
+                    approximation than xn for the root xof the function f.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;The idea of the method is as follows: one starts with an initial
+                    guess which is reasonably close to the true root, then the function is approximated
+                    by its tangent line (which can be computed using the tools of calculus), and one
+                    computes the x-intercept of this tangent line (which is easily done with elementary
+                    algebra). This x-intercept will typically be a better approximation to the function's
+                    root than the original guess, and the method can be iterated.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Suppose ƒ : [a, b] → R is a differentiable function defined on
+                    the interval [a, b] with values in the real numbers R. The formula for converging
+                    on the root can be easily derived. Suppose we have some current approximation xn.
+                    Then we can derive the formula for a better approximation, xn+1 by referring to
+                    the diagram on the right. We know from the definition of the derivative at a given
+                    point that it is the slope of a tangent at that point.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;We start the process off with some arbitrary initial value x0.
+                    (The closer to the zero, the better. But, in the absence of any intuition about
+                    where the zero might lie, a "guess and check" method might narrow the possibilities
+                    to a reasonably small interval by appealing to the intermediate value theorem.)
+                    The method will usually converge, provided this initial guess is close enough to
+                    the unknown zero, and that ƒ'(x0) ≠ 0. Furthermore, for a zero of multiplicity 1,
+                    the convergence is at least quadratic (see rate of convergence) in a neighbourhood
+                    of the zero, which intuitively means that the number of correct digits roughly at
+                    least doubles in every step. More details can be found in the analysis section below.</p>
+                <p align="center">
+                    <b><b>Application to minimization and maximization problems</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Newton's method can also be used to find a minimum or maximum
+                    of a function. The derivative is zero at a minimum or maximum, so minima and maxima
+                    can be found by applying Newton's method to the derivative. The iteration becomes:</p>
+                <p align="center">
+                    <b><b>History</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; Newton's method was described by Isaac Newton in De analysi per
+                    aequationes numero terminorum infinitas (written in 1669, published in 1711 by William
+                    Jones) and in De metodis fluxionum et serierum infinitarum(written in 1671, translated
+                    and published as Method of Fluxions in 1736 by John Colson). However, his description
+                    differs substantially from the modern description given above: Newton applies the
+                    method only to polynomials. He does not compute the successive approximations xn,
+                    but computes a sequence of polynomials and only at the end, he arrives at an approximation
+                    for the root x. Finally, Newton views the method as purely algebraic and fails to
+                    notice the connection with calculus. Isaac Newton probably derived his method from
+                    a similar but less precise method by Vieta. The essence of Vieta's method can be
+                    found in the work of the Persian mathematician, Sharaf al-Din al-Tusi, while his
+                    successor Jamshīd al-Kāshī used a form of Newton's method to solve xP − N = 0 to
+                    find roots of N (Ypma 1995). A special case of Newton's method for calculating square
+                    roots was known much earlier and is often called the Babylonian method.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Newton's method was used by 17th century Japanese mathematician
+                    Seki Kōwa to solve single-variable equations, though the connection with calculus
+                    was missing.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Newton's method was first published in 1685 in A Treatise of Algebra
+                    both Historical and Practical by John Wallis. In 1690, Joseph Raphson published
+                    a simplified description in Analysis aequationum universalis. Raphson again viewed
+                    Newton's method purely as an algebraic method and restricted its use to polynomials,
+                    but he describes the method in terms of the successive approximations xn instead
+                    of the more complicated sequence of polynomials used by Newton. Finally, in 1740,
+                    Thomas Simpson described Newton's method as an iterative method for solving general
+                    nonlinear equations using fluxional calculus, essentially giving the description
+                    above. In the same publication, Simpson also gives the generalization to systems
+                    of two equations and notes that Newton's method can be used for solving optimization
+                    problems by setting the gradient to zero.</p>
+                <p align="center">
+                    <b><b>Practical considerations</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;Newton's method is an extremely powerful technique -- in general
+                    the convergence is quadratic: the error is essentially squared at each step (that
+                    is, the number of accurate digits doubles in each step). However, there are some
+                    difficulties with the method.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; 1. Newton's method requires that the derivative be calculated
+                    directly. In most practical problems, the function in question may be given by a
+                    long and complicated formula, and hence an analytical expression for the derivative
+                    may not be easily obtainable. In these situations, it may be appropriate to approximate
+                    the derivative by using the slope of a line through two points on the function.
+                    In this case, the Secant method results. This has slightly slower convergence than
+                    Newton's method but does not require the existence of derivatives.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; 2. If the initial value is too far from the true zero, Newton's
+                    method may fail to converge. For this reason, Newton's method is often referred
+                    to as a local technique. Most practical implementations of Newton's method put an
+                    upper limit on the number of iterations and perhaps on the size of the iterates.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; 3. If the derivative of the function is not continuous the method
+                    may fail to converge.</p>
+                </p> &nbsp;&nbsp;&nbsp; 4. It is clear from the formula for Newton's method that
+                it will fail in cases where the derivative is zero. Similarly, when the derivative
+                is close to zero, the tangent line is nearly horizontal and hence may "shoot" wildly
+                past the desired root. </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; 5. If the root being sought has multiplicity greater than one,
+                    the convergence rate is merely linear (errors reduced by a constant factor at each
+                    step) unless special steps are taken. When there are two or more roots that are
+                    close together then it may take many iterations before the iterates get close enough
+                    to one of them for the quadratic convergence to be apparent.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; Since the most serious of the problems above is the possibility
+                    of a failure of convergence, Press et al. (1992) present a version of Newton's method
+                    that starts at the midpoint of an interval in which the root is known to lie and
+                    stops the iteration if an iterate is generated that lies outside the interval.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; Developers of large scale computer systems involving root finding
+                    tend to prefer the secant method over Newton's method because the use of a difference
+                    quotient in place of the derivative in Newton's method implies that the additional
+                    code to compute the derivative need not be maintained. In practice, the advantages
+                    of maintaining a smaller code base usually outweigh the superior convergence characteristics
+                    of Newton's method.</p>
+                <p align="center">
+                    <b><b>Analysis</b></b></p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; Suppose that the function ƒ has a zero at α, i.e., ƒ(α) = 0.
+                    If f is continuously differentiable and its derivative is nonzero at α, then there
+                    exists a neighborhood of α such that for all starting values x0 in that neighborhood,
+                    the sequence {xn} will converge to α.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; If the function is continuously differentiable and its derivative
+                    is not 0 at α and it has a second derivative at α then the convergence is quadratic
+                    or faster. If the second derivative is not 0 at α then the convergence is merely
+                    quadratic.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; If the derivative is 0 at α, then the convergence is usually
+                    only linear. Specifically, if ƒ is twice continuously differentiable, ƒ '(α) = 0
+                    and ƒ ''(α) ≠ 0, then there exists a neighborhood of α such that for all starting
+                    valuesx0 in that neighborhood, the sequence of iterates converges linearly, with
+                    rate log10 2 (Süli & Mayers, Exercise 1.6). Alternatively if ƒ '(α) = 0 and ƒ '(x)
+                    ≠ 0 for x ≠ 0, x in a neighborhood U of α, α being a zero ofmultiplicity r, and
+                    if ƒ ∈ Cr(U) then there exists a neighborhood of α such that for all starting values
+                    x0 in that neighborhood, the sequence of iterates converges linearly.</p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; However, even linear convergence is not guaranteed in pathological
+                    situations. In practice these results are local and the neighborhood of convergence
+                    are not known a priori, but there are also some results on global convergence, for
+                    instance, given a right neighborhood U+ of α, if f is twice differentiable in U+
+                    and if , in U+, then, for each x0 in U+ the sequence xk is monotonically decreasing
+                    to α.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

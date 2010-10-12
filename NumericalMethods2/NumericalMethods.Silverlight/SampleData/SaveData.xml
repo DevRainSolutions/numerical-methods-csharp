@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Numerical_Methods>
+  <Approximate_Decision id="BisectionMethod" Function="tan(0,9464*x)-1,3825*x" ParamInput1="0,5" ParamInput2="1,5" ParamInput3="0,0001" ParamInput4="0" />
+  <Approximate_Decision id="ChordMethod" Function="2,113*x^3-6,44*x^2-3,19*x+15,13" ParamInput1="2,4" ParamInput2="2,7" ParamInput3="2,3" ParamInput4="0,0001" />
+  <Approximate_Decision id="IterationMethod" Function="0,16*x^3-0,57*x^2-1,6*x+3,73" ParamInput1="2" ParamInput2="3" ParamInput3="4" ParamInput4="0,0001" />
+  <Approximate_Decision id="NewtonMethod" Function="2,113*x^3-6,44*x^2-3,19*x+15,13" ParamInput1="2,3" ParamInput2="2,7" ParamInput3="2,3" ParamInput4="0,0001" />
+  <Differential_Equations id="EulerSimple" Function="x^3-x*y+8" ParamInput1="0" ParamInput2="3,14" ParamInput3="1" ParamInput4="40" />
+  <Differential_Equations id="EulerModified" Function="x^3-x*y+8" ParamInput1="0" ParamInput2="3,14" ParamInput3="1" ParamInput4="40" />
+  <Differential_Equations id="EulerCorrected" Function="x^3-x*y+8" ParamInput1="0" ParamInput2="3,14" ParamInput3="1" ParamInput4="40" />
+  <Differential_Equations id="RungeKutta4" Function="x^3-x*y+8" ParamInput1="0" ParamInput2="3,14" ParamInput3="1" ParamInput4="40" />
+  <Integration id="Chebishev" Function="sqrt(x)*sin(x)" ParamInput1="0" ParamInput2="1" ParamInput3="4" ParamInput4="" />
+  <Integration id="Simpson" Function="sqrt(x)*sin(x)" ParamInput1="0" ParamInput2="1" ParamInput3="4" ParamInput4="" />
+  <Integration id="Simpson2" Function="sqrt(x)*sin(x)" ParamInput1="0" ParamInput2="1" ParamInput3="4" ParamInput4="" />
+  <Integration id="Trapezium" Function="sqrt(x)*sin(x)" ParamInput1="0" ParamInput2="1" ParamInput3="4" ParamInput4="" />
+  <NonLinearEqualization id="HalfDivision" Function="cos(x)-x^2+1" ParamInput1="0" ParamInput2="2" ParamInput3="0,00001" ParamInput4="" />
+  <NonLinearEqualization id="HordMetod" Function="cos(x)-x^2+1" ParamInput1="0" ParamInput2="2" ParamInput3="20" ParamInput4="" />
+  <NonLinearEqualization id="NewtonMetod" Function="cos(x)-x^2+1" ParamInput1="2,1" ParamInput2="20" ParamInput3="" ParamInput4="" />
+  <NonLinearEqualization id="SecantMetod" Function="cos(x)-x^2+1" ParamInput1="0,01" ParamInput2="0,0001" ParamInput3="" ParamInput4="" />
+  <Optimizing id="Brentopt" Function="x^4-3*x^3+2*x^2+x-0,5" ParamInput1="0" ParamInput2="8" ParamInput3="0,0001" ParamInput4="" />
+  <Optimizing id="GoldenSection" Function="x^4-3*x^3+2*x^2+x-0,5" ParamInput1="0" ParamInput2="8" ParamInput3="20" ParamInput4="" />
+  <Optimizing id="Pijavsky" Function="x^4-3*x^3+2*x^2+x-0,5" ParamInput1="0" ParamInput2="8" ParamInput3="8,6" ParamInput4="20" />
+  <Interpolation id="LagrangeInterpolator" F= "-1,1;-0,9;-0,7;-0,4;-0,2;0,1;"  X="1,5;1,55;1,6;1,65;1,7;1,75;" ParamInput1="1,63"  />
+  <Interpolation id="NewtonInterpolator" F="-1,1;-0,9;-0,7;-0,4;-0,2;0,1;" X="1,5;1,55;1,6;1,65;1,7;1,75;" ParamInput1="1,63"  />
+  <Interpolation id="NevilleInterpolator" F="-1,1;-0,9;-0,7;-0,4;-0,2;0,1;" X="1,5;1,55;1,6;1,65;1,7;1,75;" ParamInput1="1,63"   />
+  <Interpolation id="SplineInterpolator" F="-1,1;-0,9;-0,7;-0,4;-0,2;0,1;" X="1,5;1,55;1,6;1,65;1,7;1,75;" ParamInput1="1,63"  />
+  <Interpolation id="BarycentricInterpolator" F="-8,1;-0,9;-0,7;-0,4;-0,2;0,1;" X="1,5;1,55;1,6;1,65;1,7;1,75;" W="50;20;90;11;10;15;" ParamInput1="1,63"  />
+  <Statistics id="CorrelationPearson" F= "-1,1;-0,9;-0,7;-0,4;-0,2;0,1;"  X="1,5;1,55;1,6;1,65;1,7;1,75;" />
+  <Statistics id="CorrelationSpearmansRank" F= "-1,1;-0,9;-0,7;-0,4;-0,2;0,1;"  X="1,5;1,55;1,6;1,65;1,7;1,75;" />
+  <Statistics id="DescriptiveStatisticsADev" X="1,5;1,55;1,6;1,65;1,7;1,75;" />
+  <Statistics id="DescriptiveStatisticsMedian" X="1,5;1,55;1,6;1,65;1,7;1,75;" />
+  <Statistics id="DescriptiveStatisticsMoments" X="1,5;1,55;1,6;1,65;1,7;1,75;"/>
+  <Statistics id="DescriptiveStatisticsPercentile" X="1,5;1,55;1,6;1,65;1,7;1,75;" ParamInput="0,4"  />
+  <RandomGenerator id="Generator1"  />
+  <RandomGenerator id="Generator2" ParamInput="6"  />
+  <RandomGenerator id="Generator3"  />
+  <RandomGenerator id="Generator4" />
+  <RandomGenerator id="Generator5" ParamInput="6"  />
+  <MatrixAlgebra id="MatrixDeterminant" Range="3" Matrix="9 2 13 5 5 12 7 2 1 " />
+  <MatrixAlgebra id="RMatrixLU" Range="3" Matrix="9 2 13 5 5 12 7 2 1" />
+  <MatrixAlgebra id="MatrixInverseLU" Range="3" Matrix="1 1 2 1 1 1 1 2 1" />
+  <LinearSystems id="Gaus" Range="4" LinSysMasA="21,14 -17,82 9,02 17,08 " LinSysMatrixB="4,1 0,1 0,2 0,2 0,3 5,3 0,9 -0,1 0,2 0,3 3,2 0,2 0,1 0,1 1,2 -9,1 " />
+  <LinearSystems id="Zeidel" Range="4" LinSysMasA="21,14 -17,82 9,02 17,08 " LinSysMatrixB="4,1 0,1 0,2 0,2 0,3 5,3 0,9 -0,1 0,2 0,3 3,2 0,2 0,1 0,1 1,2 -9,1 " />
+</Numerical_Methods>

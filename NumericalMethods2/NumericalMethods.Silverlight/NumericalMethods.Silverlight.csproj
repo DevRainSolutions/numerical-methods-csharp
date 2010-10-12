@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{48EABF32-781F-432F-B87D-1AD205023F11}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NumericalMethods.Silverlight</RootNamespace>
+    <AssemblyName>NumericalMethods.Silverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>NumericalMethods.Silverlight.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>NumericalMethods.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>NumericalMethods.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Liquid">
+      <HintPath>..\DLL\Liquid.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.Components">
+      <HintPath>..\DLL\Liquid.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.Menu">
+      <HintPath>..\DLL\Liquid.Menu.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.Popup">
+      <HintPath>..\DLL\Liquid.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.RichText">
+      <HintPath>..\DLL\Liquid.RichText.dll</HintPath>
+    </Reference>
+    <Reference Include="Liquid.TreeView">
+      <HintPath>..\DLL\Liquid.TreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity">
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Expression\Blend 3\Prototyping\Libraries\Silverlight\Microsoft.Expression.Prototyping.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Prototyping.Runtime, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Prototyping.SketchControls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="SilverlightMathParser">
+      <HintPath>..\DLL\SilverlightMathParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\DLL\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\DLL\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\DLL\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Utils, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeClass\AddMethods.cs" />
+    <Compile Include="CodeClass\CalculateMethods.cs" />
+    <Compile Include="CodeClass\DragManager.cs" />
+    <Compile Include="CodeClass\Method.cs" />
+    <Compile Include="CodeClass\ProcessingData.cs" />
+    <Compile Include="CodeClass\xmlMethod.cs" />
+    <Compile Include="ControlAbout.xaml.cs">
+      <DependentUpon>ControlAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrApproximateOther.xaml.cs">
+      <DependentUpon>CntrApproximateOther.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrDifferential.xaml.cs">
+      <DependentUpon>CntrDifferential.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrIntegration.xaml.cs">
+      <DependentUpon>CntrIntegration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrInterpolation.xaml.cs">
+      <DependentUpon>CntrInterpolation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrLinearSystem.xaml.cs">
+      <DependentUpon>CntrLinearSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrMatrixAlgebra.xaml.cs">
+      <DependentUpon>CntrMatrixAlgebra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrNonLinear.xaml.cs">
+      <DependentUpon>CntrNonLinear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrOptimizing.xaml.cs">
+      <DependentUpon>CntrOptimizing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrRandomGenerator.xaml.cs">
+      <DependentUpon>CntrRandomGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CntrStatistics.xaml.cs">
+      <DependentUpon>CntrStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtnrAproximateBisection.xaml.cs">
+      <DependentUpon>CtnrAproximateBisection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyLinearSystem.xaml.cs">
+      <DependentUpon>ModifyLinearSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyMatrixAlgebra.xaml.cs">
+      <DependentUpon>ModifyMatrixAlgebra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData\Methods\Methods.xaml.cs">
+      <DependentUpon>Methods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SaveData\SaveData.xaml.cs">
+      <DependentUpon>SaveData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WndHelp.xaml.cs">
+      <DependentUpon>WndHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WndModify.xaml.cs">
+      <DependentUpon>WndModify.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="SampleData\Methods\Methods.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleData\SaveData\SaveData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ControlAbout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrApproximateOther.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrDifferential.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrIntegration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrInterpolation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrLinearSystem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrMatrixAlgebra.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrNonLinear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrOptimizing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrRandomGenerator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CntrStatistics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CtnrAproximateBisection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Help.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ModifyLinearSystem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ModifyMatrixAlgebra.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceMethods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\Methods\Methods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SaveData\SaveData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Start.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WndHelp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WndModify.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\about.png" />
+    <Resource Include="Image\Execute.png" />
+    <Resource Include="Image\Exit.png" />
+    <Resource Include="Image\filesave.png" />
+    <Resource Include="Image\filesaveAs.png" />
+    <Resource Include="Image\Help.png" />
+    <Resource Include="Image\HelpImages\Approximation\1_1.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\1_2.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\1_3.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\2_1.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\2_2.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\2_3.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\2_4.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\3_1.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\3_2.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\3_3.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\3_4.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\4_1.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\4_2.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\4_3.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\4_4.JPG" />
+    <Resource Include="Image\HelpImages\Approximation\4_5.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\1_1.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\1_2.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\1_3.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\2_1.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\2_2.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\2_3.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\3_1.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\3_2.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\3_3.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\4_1.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\4_2.JPG" />
+    <Resource Include="Image\HelpImages\DifferentialEquations\4_3.JPG" />
+    <Resource Include="Image\HelpImages\Integration\1_1.JPG" />
+    <Resource Include="Image\HelpImages\Integration\1_2.JPG" />
+    <Resource Include="Image\HelpImages\Integration\1_3.JPG" />
+    <Resource Include="Image\HelpImages\Integration\1_4.JPG" />
+    <Resource Include="Image\HelpImages\Integration\2_1.JPG" />
+    <Resource Include="Image\HelpImages\Integration\2_2.JPG" />
+    <Resource Include="Image\HelpImages\Integration\2_3.JPG" />
+    <Resource Include="Image\HelpImages\Integration\2_4.JPG" />
+    <Resource Include="Image\HelpImages\Integration\2_5.JPG" />
+    <Resource Include="Image\HelpImages\Integration\3_1.JPG" />
+    <Resource Include="Image\HelpImages\Integration\3_2.JPG" />
+    <Resource Include="Image\HelpImages\Integration\3_3.JPG" />
+    <Resource Include="Image\HelpImages\Interpolation\1_1.JPG" />
+    <Resource Include="Image\HelpImages\Interpolation\1_2.JPG" />
+    <Resource Include="Image\HelpImages\Interpolation\2_1.JPG" />
+    <Resource Include="Image\HelpImages\Interpolation\2_2.JPG" />
+    <Resource Include="Image\HelpImages\Interpolation\2_3.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_1.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_2.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_3.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_4.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_5.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_7.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\1_8.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\2_1.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\2_2.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\2_3.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\2_4.JPG" />
+    <Resource Include="Image\HelpImages\LinearSystems\2_5.JPG" />
+    <Resource Include="Image\HelpImages\Maine.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\1_1.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\1_2.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\1_3.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\1_4.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\1_5.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_1.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_2.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_3.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_4.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_5.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_6.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\2_7.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_1.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_2.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_3.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_4.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_5.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_6.JPG" />
+    <Resource Include="Image\HelpImages\MatrixAlgebra\3_7.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\1_1.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\1_2.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\1_3.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\2_1.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\2_2.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\2_3.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\2_4.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\3_1.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\3_2.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\3_3.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\3_4.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\4_1.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\4_2.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\4_3.JPG" />
+    <Resource Include="Image\HelpImages\NonLinear\4_4.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_1.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_2.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_3.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_4.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_5.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\1_6.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\2_1.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\2_2.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\2_3.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\2_4.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\2_5.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\3_1.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\3_2.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\3_4.JPG" />
+    <Resource Include="Image\HelpImages\Optimizing\3_5.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\1_1.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\1_2.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\1_3.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\1_4.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\2_1.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\2_2.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\2_3.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\2_4.JPG" />
+    <Resource Include="Image\HelpImages\Statistics\2_5.JPG" />
+    <Resource Include="Image\Icon.png" />
+    <Resource Include="Image\Info.png" />
+    <Resource Include="Image\math3.jpg" />
+    <Resource Include="Image\Modify.png" />
+    <Resource Include="Image\New.png" />
+    <Resource Include="Image\Open.png" />
+    <Resource Include="Image\pen.png" />
+    <Resource Include="Image\run.png" />
+    <Resource Include="Image\treeView\catalog.png" />
+    <Resource Include="Image\treeView\Closed.png" />
+    <Resource Include="Image\treeView\method.png" />
+    <Content Include="SampleData\SaveData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Data\DifferentialEquations\DirrefentialEquations.JPG" />
+    <Resource Include="Data\Integration\AllMethods.JPG" />
+    <Resource Include="Data\Interpolation\AllMethods.JPG" />
+    <Resource Include="Data\LinearSystems\allMethods.JPG" />
+    <Resource Include="Data\MatrixAlgebra\allMethods.JPG" />
+    <Resource Include="Data\NonLinear\AllMethods.JPG" />
+    <Resource Include="Data\Optimizing\AllMethods.JPG" />
+    <Resource Include="Data\Statistics\AllMethods.JPG" />
+    <Resource Include="Data\Approximation\MethodBisectin.JPG" />
+    <Resource Include="Data\Approximation\MethodIteration.JPG" />
+    <Resource Include="Data\Approximation\MethoHord.JPG" />
+    <Resource Include="Data\Approximation\MethoNewton.JPG" />
+    <Content Include="Methods.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NumericalMethods.SilverlightLibrary\NumericalMethods.SilverlightLibrary.csproj">
+      <Project>{59D2BC36-BD65-4684-9052-AFC46ED15AE4}</Project>
+      <Name>NumericalMethods.SilverlightLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

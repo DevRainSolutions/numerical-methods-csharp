@@ -1,0 +1,1285 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="MethodBisectin.files/filelist.xml">
+<link rel=Preview href="MethodBisectin.files/preview.wmf">
+<link rel=Edit-Time-Data href="MethodBisectin.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Лабораторная работа №2</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Alex</o:Author>
+  <o:LastAuthor>Michael</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>450</o:TotalTime>
+  <o:Created>2009-12-04T19:37:00Z</o:Created>
+  <o:LastSaved>2009-12-04T19:37:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3026</o:Words>
+  <o:Characters>1725</o:Characters>
+  <o:Company>Wolfish Lair</o:Company>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>4742</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="MethodBisectin.files/themedata.thmx">
+<link rel=colorSchemeMapping href="MethodBisectin.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>UK</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:UnderlineTabInNumList/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="0" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1107304683 0 0 415 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1073741899 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+h1
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Обычный;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-font-kerning:0pt;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:normal;}
+h2
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 233.85pt right 467.75pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 233.85pt right 467.75pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-noshow:yes;
+	mso-style-unhide:no;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MapleOutput, li.MapleOutput, div.MapleOutput
+	{mso-style-name:"Maple Output";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:150%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+p.TextOutput1, li.TextOutput1, div.TextOutput1
+	{mso-style-name:"Text Output1";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-style-next:Обычный;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+p.TextOutput, li.TextOutput, div.TextOutput
+	{mso-style-name:"Text Output";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+span.MapleInput
+	{mso-style-name:"Maple Input";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Normal, li.Normal, div.Normal
+	{mso-style-name:Normal;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:RU;
+	layout-grid-mode:line;}
+span.apple-style-span
+	{mso-style-name:apple-style-span;
+	mso-style-unhide:no;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;
+	font-style:italic;}
+span.mw-headline
+	{mso-style-name:mw-headline;
+	mso-style-unhide:no;}
+span.editsection
+	{mso-style-name:editsection;
+	mso-style-unhide:no;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("MethodBisectin.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("MethodBisectin.files/header.htm") fcs;
+	mso-endnote-separator:url("MethodBisectin.files/header.htm") es;
+	mso-endnote-continuation-separator:url("MethodBisectin.files/header.htm") ecs;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:42.55pt 49.55pt 28.4pt 2.0cm;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:0cm;
+	mso-footer:url("MethodBisectin.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:210070139;
+	mso-list-template-ids:1747628162;}
+@list l0:level1
+	{mso-level-start-at:4;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-start-at:2;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:30.0pt;
+	mso-level-number-position:left;
+	margin-left:30.0pt;
+	text-indent:-30.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:303201747;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-582061620 -136648544 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l1:level1
+	{mso-level-text:%1;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:70.5pt;
+	text-indent:-34.5pt;}
+@list l2
+	{mso-list-id:692921131;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1277931716 68747279 68747265 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l2:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:754938498;
+	mso-list-template-ids:1330424684;}
+@list l3:level1
+	{mso-level-start-at:4;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l3:level2
+	{mso-level-start-at:2;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:30.0pt;
+	mso-level-number-position:left;
+	margin-left:30.0pt;
+	text-indent:-30.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4
+	{mso-list-id:874855582;
+	mso-list-type:simple;
+	mso-list-template-ids:68747281;}
+@list l4:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-ansi-font-style:normal;}
+@list l5
+	{mso-list-id:1232930507;
+	mso-list-type:simple;
+	mso-list-template-ids:1898862062;}
+@list l5:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;}
+@list l6
+	{mso-list-id:1737508903;
+	mso-list-template-ids:-1170310072;}
+@list l6:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l6:level2
+	{mso-level-start-at:2;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:30.0pt;
+	mso-level-number-position:left;
+	margin-left:30.0pt;
+	text-indent:-30.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l7
+	{mso-list-id:1805276198;
+	mso-list-type:simple;
+	mso-list-template-ids:68747281;}
+@list l7:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l8
+	{mso-list-id:1870726912;
+	mso-list-template-ids:1745140936;}
+@list l8:level1
+	{mso-level-start-at:4;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-weight:bold;}
+@list l8:level2
+	{mso-level-start-at:2;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:30.0pt;
+	mso-level-number-position:left;
+	margin-left:30.0pt;
+	text-indent:-30.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l8:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l9
+	{mso-list-id:1882326112;
+	mso-list-type:simple;
+	mso-list-template-ids:-376535726;}
+@list l9:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:162.0pt;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-18.0pt;}
+@list l10
+	{mso-list-id:2054621392;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1998763588 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=UK link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h2 style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+36.0pt;background:#F8FCFF'><span class=apple-style-span><span style='font-size:
+12.0pt;font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US>In</span></span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'><a
+href="http://en.wikipedia.org/wiki/Mathematics" title=Mathematics><span
+lang=EN-US style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;
+text-decoration:none;text-underline:none'>mathematics</span></a></span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+mso-bidi-font-style:italic'>, the</span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;font-style:normal;mso-bidi-font-style:italic'>bisection
+method</span></span><span class=apple-converted-space><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif";color:black;
+mso-themecolor:text1;mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:
+bold;font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+mso-bidi-font-style:italic'>is a</span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'><a
+href="http://en.wikipedia.org/wiki/Root-finding_algorithm"
+title="Root-finding algorithm"><span lang=EN-US style='color:black;mso-themecolor:
+text1;mso-ansi-language:EN-US;text-decoration:none;text-underline:none'>root-finding
+algorithm</span></a></span></span><span class=apple-converted-space><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;mso-ansi-language:EN-US;font-weight:normal;
+mso-bidi-font-weight:bold;font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+mso-bidi-font-style:italic'>which repeatedly bisects an</span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'><a
+href="http://en.wikipedia.org/wiki/Interval_(mathematics)"
+title="Interval (mathematics)"><span lang=EN-US style='color:black;mso-themecolor:
+text1;mso-ansi-language:EN-US;text-decoration:none;text-underline:none'>interval</span></a></span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+mso-bidi-font-style:italic'>then selects a subinterval in which a</span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'><a
+href="http://en.wikipedia.org/wiki/Root_of_a_function"
+title="Root of a function"><span lang=EN-US style='color:black;mso-themecolor:
+text1;mso-ansi-language:EN-US;text-decoration:none;text-underline:none'>root</span></a></span></span><span
+class=apple-converted-space><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'>&nbsp;</span></span><span
+class=apple-style-span><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black;mso-themecolor:text1;mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold;font-style:normal;
+mso-bidi-font-style:italic'>must lie for further processing. It is a very
+simple and robust method, but it is also relatively slow.<o:p></o:p></span></span></h2>
+
+<h2 align=center style='margin:0cm;margin-bottom:.0001pt;text-align:center;
+text-indent:36.0pt;background:#F8FCFF'><span class=mw-headline><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman","serif";color:black;
+mso-themecolor:text1;mso-ansi-language:EN'><o:p>&nbsp;</o:p></span></span></h2>
+
+<h2 align=center style='margin:0cm;margin-bottom:.0001pt;text-align:center;
+text-indent:36.0pt;background:#F8FCFF'><span class=mw-headline><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman","serif";color:black;
+mso-themecolor:text1;mso-ansi-language:EN'>The method</span></span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman","serif";
+color:black;mso-themecolor:text1;mso-ansi-language:EN'><o:p></o:p></span></h2>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>The method is applicable when we wish to solve the
+equation </span><span style='color:black;mso-themecolor:text1'><span
+style='mso-no-proof:yes'><img border=0 width=73 height=21 id="_x0000_i1025"
+src="Bisection%20method%20-%20Wikipedia,%20the%20free%20encyclopedia_files/35857425c5b9abb0b43cef6e90e04446.png"
+alt=" f(x) = 0 \ "></span></span><span style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> </span></span><span
+lang=EN style='color:black;mso-themecolor:text1;mso-ansi-language:EN'>for the <a
+href="http://en.wikipedia.org/wiki/Scalar_(mathematics)"
+title="Scalar (mathematics)"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>scalar</span></a> variable <i>x</i>,
+where <i>f</i> is a <a href="http://en.wikipedia.org/wiki/Continuous_function"
+title="Continuous function"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>continuous function</span></a>.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>The bisection method requires two initial points <i>a</i>
+and <i>b</i> such that <i>f</i>(<i>a</i>) and <i>f</i>(<i>b</i>) have opposite
+signs. This is called a bracket of a root, for by the <a
+href="http://en.wikipedia.org/wiki/Intermediate_value_theorem"
+title="Intermediate value theorem"><span style='color:black;mso-themecolor:
+text1;text-decoration:none;text-underline:none'>intermediate value theorem</span></a>
+the continuous function <i>f</i> must have at least one root in the interval (<i>a</i>,
+<i>b</i>). The method now divides the interval in two by computing the midpoint
+<i>c</i> = (<i>a</i>+<i>b</i>) / 2 of the interval. Unless <i>c</i> is itself a
+root--which is very unlikely, but possible--there are now two possibilities:
+either <i>f</i>(<i>a</i>) and <i>f</i>(<i>c</i>) have opposite signs and
+bracket a root, or <i>f</i>(<i>c</i>) and <i>f</i>(<i>b</i>) have opposite
+signs and bracket a root. We select the subinterval that is a bracket, and
+apply the same bisection step to it. In this way the interval that might
+contain a zero of <i>f</i> is reduced in width by 50% at each step. We continue
+until we have a bracket sufficiently small for our purposes.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>Explicitly, if <i>f</i>(<i>a</i>) <i>f</i>(<i>c</i>) &lt;
+0, then the method sets <i>b</i> equal to <i>c</i>, and if <i>f</i>(<i>b</i>) <i>f</i>(<i>c</i>)
+&lt; 0, then the method sets <i>a</i> equal to <i>c</i>. In both cases, the new
+<i>f</i>(<i>a</i>) and <i>f</i>(<i>b</i>) have opposite signs, so the method is
+applicable to this smaller interval. A practical implementation of this method
+must guard against the uncommon occurrence that the midpoint is indeed a
+solution.<o:p></o:p></span></p>
+
+<h2 align=center style='margin:0cm;margin-bottom:.0001pt;text-align:center;
+background:#F8FCFF'><span class=mw-headline><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN'><o:p>&nbsp;</o:p></span></span></h2>
+
+<h2 align=center style='margin:0cm;margin-bottom:.0001pt;text-align:center;
+background:#F8FCFF'><span class=mw-headline><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>Analysis</span></span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman","serif";color:black;mso-themecolor:text1;
+mso-ansi-language:EN'><o:p></o:p></span></h2>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>If <i>f</i> is a <a
+href="http://en.wikipedia.org/wiki/Continuous_function"
+title="Continuous function"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>continuous function</span></a> on the
+interval [<i>a</i>, <i>b</i>] and <i>f</i>(<i>a</i>)<i>f</i>(<i>b</i>) &lt; 0,
+then the bisection method <a
+href="http://en.wikipedia.org/wiki/Limit_of_a_sequence"
+title="Limit of a sequence"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>converges</span></a> to a root of <i>f</i>.
+In fact, the <a href="http://en.wikipedia.org/wiki/Approximation_error"
+title="Approximation error"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>absolute error</span></a> is halved
+at each step. Thus, the method <a
+href="http://en.wikipedia.org/wiki/Rate_of_convergence"
+title="Rate of convergence"><span style='color:black;mso-themecolor:text1;
+text-decoration:none;text-underline:none'>converges linearly</span></a>, which
+is quite slow. On the other hand, the method is guaranteed to converge if f(<i>a</i>)
+and f(<i>b</i>) have different signs.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>The bisection method gives only a range where the root
+exists, rather than a single estimate for the root's location. Without using
+any other information, the best estimate for the location of the root is the
+midpoint of the smallest bracket found. In that case, the absolute error after <i>n</i>
+steps is at most<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;background:
+#F8FCFF'><span style='font-size:12.0pt;color:black;mso-themecolor:text1;
+mso-ansi-language:UK;mso-fareast-language:UK;mso-no-proof:yes'><img border=0
+width=60 height=42 id="_x0000_i1026"
+src="Bisection%20method%20-%20Wikipedia,%20the%20free%20encyclopedia_files/432b65cb75c4910c0a0f75e81a8362fc.png"
+alt="\frac{\left|b-a\right|}{2^{n+1}}."></span><span lang=EN style='font-size:
+12.0pt;color:black;mso-themecolor:text1;mso-ansi-language:EN'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;background:#F8FCFF'><span
+lang=EN style='color:black;mso-themecolor:text1;mso-ansi-language:EN'>If either
+endpoint of the interval is used, then the maximum absolute error is<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;background:
+#F8FCFF'><span style='font-size:12.0pt;color:black;mso-themecolor:text1;
+mso-ansi-language:UK;mso-fareast-language:UK;mso-no-proof:yes'><img border=0
+width=60 height=42 id="_x0000_i1028"
+src="Bisection%20method%20-%20Wikipedia,%20the%20free%20encyclopedia_files/fdcc7c5c6f75def5868e226269d4e4c8.png"
+alt="\frac{\left|b-a\right|}{2^{n}},"></span><span lang=EN-US style='font-size:
+12.0pt;color:black;mso-themecolor:text1;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span></span><span lang=EN style='font-size:12.0pt;
+color:black;mso-themecolor:text1;mso-ansi-language:EN'>the entire length of the
+interval.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>These formulas can be used to determine in advance the
+number of iterations that the bisection method would need to converge to a root
+to within a certain tolerance. For, using the second formula for the error, the
+number of iterations <i>n</i> has to satisfy<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;background:
+#F8FCFF'><span style='font-size:12.0pt;color:black;mso-themecolor:text1;
+mso-ansi-language:UK;mso-fareast-language:UK;mso-no-proof:yes'><img border=0
+width=119 height=41 id="_x0000_i1027"
+src="Bisection%20method%20-%20Wikipedia,%20the%20free%20encyclopedia_files/b40cfa97c8749df6766b5677ebfbcb3b.png"
+alt=" n &gt; \log_2\frac{b-a}{\epsilon}"></span><span lang=RU style='font-size:
+12.0pt;color:black;mso-themecolor:text1;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span></span><span lang=EN style='font-size:12.0pt;
+color:black;mso-themecolor:text1;mso-ansi-language:EN'>to ensure that the error
+is smaller than the tolerance &#949;.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+background:#F8FCFF'><span lang=EN style='color:black;mso-themecolor:text1;
+mso-ansi-language:EN'>If <i>f</i> has several simple roots in the interval [<i>a</i>,<i>b</i>],
+then the bisection method will find one of them.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:7.1pt'><span lang=EN
+style='font-size:12.0pt;color:black;mso-themecolor:text1;mso-ansi-language:
+EN'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

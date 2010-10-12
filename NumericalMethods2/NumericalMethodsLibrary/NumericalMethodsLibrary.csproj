@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{660556AB-968A-41D9-B7EB-F1D50B2CB7D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NumericalMethods</RootNamespace>
+    <AssemblyName>NumericalMethodsLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllMethodText.cs" />
+    <Compile Include="AP.cs" />
+    <Compile Include="Approximation\Bisection.cs" />
+    <Compile Include="Approximation\Chord.cs" />
+    <Compile Include="Approximation\MethodIteration.cs" />
+    <Compile Include="Approximation\Newton.cs" />
+    <Compile Include="BisectionZeroFinder.cs" />
+    <Compile Include="ContinuedFraction.cs" />
+    <Compile Include="Curves\Curve.cs" />
+    <Compile Include="Curves\Histogram.cs" />
+    <Compile Include="DhbMath.cs" />
+    <Compile Include="DifferentialEquations\EulerCorrected.cs" />
+    <Compile Include="DifferentialEquations\EulerModified.cs" />
+    <Compile Include="DifferentialEquations\EulerSimple.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="DifferentialEquations\RungeKutta4.cs" />
+    <Compile Include="FunctionalIterator.cs" />
+    <Compile Include="FunctionDerivative.cs" />
+    <Compile Include="GammaFunction.cs" />
+    <Compile Include="ICurve.cs" />
+    <Compile Include="ICurveMouseClickListener.cs" />
+    <Compile Include="IHistogram.cs" />
+    <Compile Include="IManyVariableFunction.cs" />
+    <Compile Include="IncompleteBetaFunction.cs" />
+    <Compile Include="IncompleteBetaFunctionFraction.cs" />
+    <Compile Include="IncompleteGammaFunction.cs" />
+    <Compile Include="IncompleteGammaFunctionFraction.cs" />
+    <Compile Include="IncompleteGammaFunctionSeries.cs" />
+    <Compile Include="InifiniteSeries.cs" />
+    <Compile Include="Integration\Chebishev.cs" />
+    <Compile Include="Integration\Simpson.cs" />
+    <Compile Include="Integration\Simpson2.cs" />
+    <Compile Include="Integration\Trapezium.cs" />
+    <Compile Include="Interpolation\BarycentricInterpolation.cs" />
+    <Compile Include="Interpolation\LagrangeInterpolator.cs" />
+    <Compile Include="Interpolation\NevilleInterpolator.cs" />
+    <Compile Include="Interpolation\NewtonInterpolator.cs" />
+    <Compile Include="Interpolation\SplineInterpolator.cs" />
+    <Compile Include="IOneVariableFunction.cs" />
+    <Compile Include="IParametrizedOneVariableFunction.cs" />
+    <Compile Include="IPointSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IPointSeriesWithErrors.cs" />
+    <Compile Include="IterativeProcess.cs" />
+    <Compile Include="LinearSystems\SecantLinear.cs" />
+    <Compile Include="MatrixAlgebra\DhbIllegalDimension.cs" />
+    <Compile Include="MatrixAlgebra\DhbNonSymmetricComponents.cs" />
+    <Compile Include="MatrixAlgebra\DhbVector.cs" />
+    <Compile Include="MatrixAlgebra\JacobiTransformation.cs" />
+    <Compile Include="MatrixAlgebra\LargestEigenvalueFinder.cs" />
+    <Compile Include="MatrixAlgebra\LinearEquations.cs" />
+    <Compile Include="MatrixAlgebra\LUPDecomposition.cs" />
+    <Compile Include="MatrixAlgebra\Matrix.cs" />
+    <Compile Include="MatrixAlgebra\MatrixDeterminant.cs" />
+    <Compile Include="MatrixAlgebra\RMatrixLU.cs" />
+    <Compile Include="MatrixAlgebra\RMatrixLuInverse.cs" />
+    <Compile Include="MatrixAlgebra\SymmetricMatrix.cs" />
+    <Compile Include="NewtonZeroFinder.cs" />
+    <Compile Include="NonLinear\HalfDivision.cs" />
+    <Compile Include="NonLinear\MetodHord.cs" />
+    <Compile Include="NonLinear\Newton.cs" />
+    <Compile Include="NonLinear\Secant.cs" />
+    <Compile Include="Optimizing\Brentopt.cs" />
+    <Compile Include="Optimizing\ChromosomeManager.cs" />
+    <Compile Include="Optimizing\GeneticOptimizer.cs" />
+    <Compile Include="Optimizing\GoldenSection.cs" />
+    <Compile Include="Optimizing\HillClimbingOptimizer.cs" />
+    <Compile Include="Optimizing\MaximizingPoint.cs" />
+    <Compile Include="Optimizing\MaximizingPointFactory.cs" />
+    <Compile Include="Optimizing\MaximizingVector.cs" />
+    <Compile Include="Optimizing\MinimizingPoint.cs" />
+    <Compile Include="Optimizing\MinimizingPointFactory.cs" />
+    <Compile Include="Optimizing\MinimizingVector.cs" />
+    <Compile Include="Optimizing\MultiVariableGeneralOptimizer.cs" />
+    <Compile Include="Optimizing\MultiVariableOptimizer.cs" />
+    <Compile Include="Optimizing\OneVariableFunctionOptimizer.cs" />
+    <Compile Include="Optimizing\OptimizingBracketFinder.cs" />
+    <Compile Include="Optimizing\OptimizingPoint.cs" />
+    <Compile Include="Optimizing\OptimizingPointFactory.cs" />
+    <Compile Include="Optimizing\OptimizingVector.cs" />
+    <Compile Include="Optimizing\Pijavsky.cs" />
+    <Compile Include="Optimizing\SimplexOptimizer.cs" />
+    <Compile Include="Optimizing\VectorChromosomeManager.cs" />
+    <Compile Include="Optimizing\VectorGeneticOptimizer.cs" />
+    <Compile Include="Optimizing\VectorProjectedFunction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LinearSystems\Gaus.cs" />
+    <Compile Include="LinearSystems\Zeidel.cs" />
+    <Compile Include="Regression\EstimatedPolynomial.cs" />
+    <Compile Include="Regression\LinearRegression.cs" />
+    <Compile Include="Regression\PolynomialFunction.cs" />
+    <Compile Include="Regression\PolynomialLeastSquareFit.cs" />
+    <Compile Include="Regression\WeightedPoint.cs" />
+    <Compile Include="Statistics\BetaDistribution.cs" />
+    <Compile Include="Statistics\CauchyDistribution.cs" />
+    <Compile Include="Statistics\ChiSquareDistribution.cs" />
+    <Compile Include="Statistics\CorrelationPearson.cs" />
+    <Compile Include="Statistics\CorrelationSpearmansRank.cs" />
+    <Compile Include="Statistics\DescriptiveStatisticsADev.cs" />
+    <Compile Include="Statistics\DescriptiveStatisticsMedian.cs" />
+    <Compile Include="Statistics\DescriptiveStatisticsMoments.cs" />
+    <Compile Include="Statistics\DescriptiveStatisticsPercentile .cs" />
+    <Compile Include="Statistics\ExponentialDistribution.cs" />
+    <Compile Include="Statistics\FastStatisticalMoments.cs" />
+    <Compile Include="Statistics\FisherSnedecorDistribution.cs" />
+    <Compile Include="Statistics\FisherTippettDistribution.cs" />
+    <Compile Include="Statistics\FixedStatisticalMoments.cs" />
+    <Compile Include="Statistics\GammaDistribution.cs" />
+    <Compile Include="Statistics\HistogrammedDistribution.cs" />
+    <Compile Include="Statistics\LaplaceDistribution.cs" />
+    <Compile Include="Statistics\MitchellMooreGenerator.cs" />
+    <Compile Include="Statistics\NormalDistribution.cs" />
+    <Compile Include="Statistics\OffsetDistributionFunction.cs" />
+    <Compile Include="Statistics\ProbabilityDensityFunction.cs" />
+    <Compile Include="Statistics\RandomGenerator.cs" />
+    <Compile Include="Statistics\RandomGeneratorsMethod1.cs" />
+    <Compile Include="Statistics\RandomGeneratorsMethod2.cs" />
+    <Compile Include="Statistics\RandomGeneratorsMethod3.cs" />
+    <Compile Include="Statistics\RandomGeneratorsMethod4.cs" />
+    <Compile Include="Statistics\RandomGeneratorsMethod5.cs" />
+    <Compile Include="Statistics\RandomIntegrator.cs" />
+    <Compile Include="Statistics\ScaledProbabilityDensityFunction.cs" />
+    <Compile Include="Statistics\StatisticalMoments.cs" />
+    <Compile Include="Statistics\StudentDistribution.cs" />
+    <Compile Include="Statistics\TriangularDistribution.cs" />
+    <Compile Include="Statistics\UniformDistribution.cs" />
+    <Compile Include="Statistics\WeibullDistribution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DifferentialEquations\EulerSimple.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Approximation\MethodBisectin.htm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Approximation\image\1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
