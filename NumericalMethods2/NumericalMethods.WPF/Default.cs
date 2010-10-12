@@ -24,6 +24,7 @@ using Microsoft.Win32;
 using MathParser;
 using MathParser.TextModel;
 using System.Windows.Markup;
+using YuMV.NumericalMethods;
 namespace NumericalMethods.WPF.Help
 {
     class NumericalMethods : Window
