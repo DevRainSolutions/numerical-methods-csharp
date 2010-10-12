@@ -61,7 +61,7 @@ namespace NumericalMethods_Silverlight.Code
 
                         Bisection bisect = new Bisection(new FunctionOne(TestFunBisection), param1, param2, param3);
                         result = "\n Result of the program: \n" +
-                            "    x= " + string.Format("{0:f" + precision + "}", bisect.GetSolution());
+                            "    x= " + string.Format("{0:f" + precision + "}", bisect.Result);
                     }
                     break;
                 case "Chord Method":
@@ -90,7 +90,7 @@ namespace NumericalMethods_Silverlight.Code
                 case "Euler Simple":
                     {
                         EulerSimple eulersimpl = new EulerSimple(new Function(TestFunDifferEquations), param1, param2, param3, Convert.ToInt32(param4));
-                        var result_eulersimpl = eulersimpl.GetSolution();
+                        var result_eulersimpl = eulersimpl.Result;
                         for (int j = 0; j < Convert.ToInt32(param4); j++)
                         {
                             result = result + string.Format("{0:f" + precision + "}", result_eulersimpl[0, j])
@@ -103,7 +103,7 @@ namespace NumericalMethods_Silverlight.Code
                 case "Euler Modified":
                     {
                         EulerModified eulerModif = new EulerModified(new Function(TestFunDifferEquations), param1, param2, param3, Convert.ToInt32(param4));
-                        var result_eulerModif = eulerModif.GetSolution();
+                        var result_eulerModif = eulerModif.Result;
                         for (int j = 0; j < Convert.ToInt32(param4); j++)
                         {
                             result = result + string.Format("{0:f" + precision + "}", result_eulerModif[0, j])
@@ -116,7 +116,7 @@ namespace NumericalMethods_Silverlight.Code
                 case "Euler Corrected":
                     {
                         EulerCorrected eulerCorrect = new EulerCorrected(new Function(TestFunDifferEquations), param1, param2, param3, Convert.ToInt32(param4));
-                        var result_eulerCorrect = eulerCorrect.GetSolution();
+                        var result_eulerCorrect = eulerCorrect.Result;
                         for (int j = 0; j < Convert.ToInt32(param4); j++)
                         {
                             result = result + string.Format("{0:f" + precision + "}", result_eulerCorrect[0, j])
@@ -127,7 +127,7 @@ namespace NumericalMethods_Silverlight.Code
                 case "Runge-Kutta4":
                     {
                         RungeKutta4 rungeKutta4 = new RungeKutta4(new Function(TestFunDifferEquations), param1, param2, param3, Convert.ToInt32(param4));
-                        var result_rungeKutta4 = rungeKutta4.GetSolution();
+                        var result_rungeKutta4 = rungeKutta4.Result;
                         for (int j = 0; j < Convert.ToInt32(param4); j++)
                         {
                             result = result + string.Format("{0:f" + precision + "}", result_rungeKutta4[0, j])

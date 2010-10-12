@@ -463,9 +463,9 @@
     <Content Include="Methods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NumericalMethods.SilverlightLibrary\NumericalMethods.SilverlightLibrary.csproj">
-      <Project>{59D2BC36-BD65-4684-9052-AFC46ED15AE4}</Project>
-      <Name>NumericalMethods.SilverlightLibrary</Name>
+    <ProjectReference Include="..\NumericalMethods.Library\NumericalMethods.Library.csproj">
+      <Project>{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}</Project>
+      <Name>NumericalMethods.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

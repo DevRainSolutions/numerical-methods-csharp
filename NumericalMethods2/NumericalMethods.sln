@@ -22,8 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.Library", "NumericalMethods.Library\NumericalMethods.Library.csproj", "{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.SilverlightLibrary", "NumericalMethods.SilverlightLibrary\NumericalMethods.SilverlightLibrary.csproj", "{59D2BC36-BD65-4684-9052-AFC46ED15AE4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.Silverlight", "NumericalMethods.Silverlight\NumericalMethods.Silverlight.csproj", "{48EABF32-781F-432F-B87D-1AD205023F11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.WinClient", "NumericalMethods.WinClient\NumericalMethods.WinClient.csproj", "{72EE825B-0BF6-415E-AC97-F55E84054022}"
@@ -36,7 +34,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethodsLibrary", "
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
+		SccNumberOfProjects = 8
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs10
 		SccLocalPath0 = .
@@ -48,30 +46,26 @@ Global
 		SccProjectTopLevelParentUniqueName2 = NumericalMethods.sln
 		SccProjectName2 = NumericalMethods.Silverlight
 		SccLocalPath2 = NumericalMethods.Silverlight
-		SccProjectUniqueName3 = NumericalMethods.SilverlightLibrary\\NumericalMethods.SilverlightLibrary.csproj
+		SccProjectUniqueName3 = NumericalMethods.Tests\\NumericalMethods.Tests.csproj
 		SccProjectTopLevelParentUniqueName3 = NumericalMethods.sln
-		SccProjectName3 = NumericalMethods.SilverlightLibrary
-		SccLocalPath3 = NumericalMethods.SilverlightLibrary
-		SccProjectUniqueName4 = NumericalMethods.Tests\\NumericalMethods.Tests.csproj
+		SccProjectName3 = NumericalMethods.Tests
+		SccLocalPath3 = NumericalMethods.Tests
+		SccProjectUniqueName4 = NumericalMethods.WinClient\\NumericalMethods.WinClient.csproj
 		SccProjectTopLevelParentUniqueName4 = NumericalMethods.sln
-		SccProjectName4 = NumericalMethods.Tests
-		SccLocalPath4 = NumericalMethods.Tests
-		SccProjectUniqueName5 = NumericalMethods.WinClient\\NumericalMethods.WinClient.csproj
+		SccProjectName4 = NumericalMethods.WinClient
+		SccLocalPath4 = NumericalMethods.WinClient
+		SccProjectUniqueName5 = NumericalMethods.WPF.Help\\NumericalMethods.WPF.Help.csproj
 		SccProjectTopLevelParentUniqueName5 = NumericalMethods.sln
-		SccProjectName5 = NumericalMethods.WinClient
-		SccLocalPath5 = NumericalMethods.WinClient
-		SccProjectUniqueName6 = NumericalMethods.WPF.Help\\NumericalMethods.WPF.Help.csproj
+		SccProjectName5 = NumericalMethods.WPF.Help
+		SccLocalPath5 = NumericalMethods.WPF.Help
+		SccProjectUniqueName6 = NumericalMethods.WPF\\NumericalMethods.WPF.csproj
 		SccProjectTopLevelParentUniqueName6 = NumericalMethods.sln
-		SccProjectName6 = NumericalMethods.WPF.Help
-		SccLocalPath6 = NumericalMethods.WPF.Help
-		SccProjectUniqueName7 = NumericalMethods.WPF\\NumericalMethods.WPF.csproj
+		SccProjectName6 = NumericalMethods.WPF
+		SccLocalPath6 = NumericalMethods.WPF
+		SccProjectUniqueName7 = NumericalMethodsLibrary\\NumericalMethodsLibrary.csproj
 		SccProjectTopLevelParentUniqueName7 = NumericalMethods.sln
-		SccProjectName7 = NumericalMethods.WPF
-		SccLocalPath7 = NumericalMethods.WPF
-		SccProjectUniqueName8 = NumericalMethodsLibrary\\NumericalMethodsLibrary.csproj
-		SccProjectTopLevelParentUniqueName8 = NumericalMethods.sln
-		SccProjectName8 = NumericalMethodsLibrary
-		SccLocalPath8 = NumericalMethodsLibrary
+		SccProjectName7 = NumericalMethodsLibrary
+		SccLocalPath7 = NumericalMethodsLibrary
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NumericalMethods.vsmdi
@@ -105,16 +99,6 @@ Global
 		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2}.Release|x86.ActiveCfg = Release|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4}.Release|x86.ActiveCfg = Release|Any CPU
 		{48EABF32-781F-432F-B87D-1AD205023F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48EABF32-781F-432F-B87D-1AD205023F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48EABF32-781F-432F-B87D-1AD205023F11}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -175,7 +159,6 @@ Global
 		{1CAFEE44-D5EE-4468-9125-5B43F4B972BD} = {CF86D61D-A9D0-4547-9D5B-77FBDD459686}
 		{8DF14CF1-D572-4C4E-A064-06C22587D698} = {CF86D61D-A9D0-4547-9D5B-77FBDD459686}
 		{BDCDD1EE-CCCB-480A-9611-232FF8DD00D2} = {52962CF5-CA2C-4C03-B37F-1748EE3A83BE}
-		{59D2BC36-BD65-4684-9052-AFC46ED15AE4} = {52962CF5-CA2C-4C03-B37F-1748EE3A83BE}
 		{660556AB-968A-41D9-B7EB-F1D50B2CB7D6} = {52962CF5-CA2C-4C03-B37F-1748EE3A83BE}
 		{58816B0D-82BF-4CAF-BD48-C36A3D296FBD} = {A4828D92-E1EF-46CE-9D83-389A766D3A9A}
 		{CD252C69-F0AD-4614-8EB4-EB74B9077487} = {A4828D92-E1EF-46CE-9D83-389A766D3A9A}
