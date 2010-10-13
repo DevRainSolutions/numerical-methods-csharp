@@ -32,6 +32,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods.WPF.Help",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethodsLibrary", "NumericalMethodsLibrary\NumericalMethodsLibrary.csproj", "{660556AB-968A-41D9-B7EB-F1D50B2CB7D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{C0571EB4-15B0-40EC-8528-210526B13B9A}"
+	ProjectSection(SolutionItems) = preProject
+		DLL\Liquid.Components.dll = DLL\Liquid.Components.dll
+		DLL\Liquid.dll = DLL\Liquid.dll
+		DLL\Liquid.Menu.dll = DLL\Liquid.Menu.dll
+		DLL\Liquid.Popup.dll = DLL\Liquid.Popup.dll
+		DLL\Liquid.RichText.dll = DLL\Liquid.RichText.dll
+		DLL\Liquid.TreeView.dll = DLL\Liquid.TreeView.dll
+		DLL\Parser.dll = DLL\Parser.dll
+		DLL\SilverlightMathParser.dll = DLL\SilverlightMathParser.dll
+		DLL\System.Windows.Controls.DataVisualization.Toolkit.dll = DLL\System.Windows.Controls.DataVisualization.Toolkit.dll
+		DLL\System.Windows.Controls.Input.Toolkit.dll = DLL\System.Windows.Controls.Input.Toolkit.dll
+		DLL\System.Windows.Controls.Toolkit.dll = DLL\System.Windows.Controls.Toolkit.dll
+		DLL\System.Windows.Forms.DataVisualization.Design.dll = DLL\System.Windows.Forms.DataVisualization.Design.dll
+		DLL\System.Windows.Forms.DataVisualization.dll = DLL\System.Windows.Forms.DataVisualization.dll
+		DLL\System.Windows.Interactivity.dll = DLL\System.Windows.Interactivity.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 8
