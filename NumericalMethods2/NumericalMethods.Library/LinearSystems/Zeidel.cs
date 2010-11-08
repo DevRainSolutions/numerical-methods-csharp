@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NumericalMethods.SystemLinearEqualizations
+namespace NumericalMethods.LinearSystems
 {
     public class Zeidel
     {

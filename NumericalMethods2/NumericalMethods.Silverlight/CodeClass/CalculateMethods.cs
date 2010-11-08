@@ -13,7 +13,7 @@ using NumericalMethods.DifferentialEquations;
 using NumericalMethods.Approximation;
 using NumericalMethods.Integration;
 using NumericalMethods.NonLinearEquations;
-using NumericalMethods.SystemLinearEqualizations;
+using NumericalMethods.LinearSystems;
 using NumericalMethods.Interpolation;
 using NumericalMethods.MatrixAlgebra;
 using NumericalMethods.Optimizing;

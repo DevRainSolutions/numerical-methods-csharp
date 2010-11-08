@@ -85,11 +85,19 @@
     <Compile Include="Approximation\Chord.cs" />
     <Compile Include="Approximation\MethodIteration.cs" />
     <Compile Include="Approximation\Newton.cs" />
+    <Compile Include="DataMining\ClusterCentroid.cs" />
+    <Compile Include="DataMining\ClusterPoint.cs" />
+    <Compile Include="DataMining\CMeansAlgorithm.cs" />
+    <Compile Include="DataMining\FuzzyCMeansAlgorithm.cs" />
+    <Compile Include="DataMining\Genome.cs" />
+    <Compile Include="DataMining\GenomeComparer.cs" />
+    <Compile Include="DataMining\SOM.cs" />
     <Compile Include="DifferentialEquations\DifferentialEquationsBase.cs" />
     <Compile Include="DifferentialEquations\EulerCorrected.cs" />
     <Compile Include="DifferentialEquations\EulerModified.cs" />
     <Compile Include="DifferentialEquations\EulerSimple.cs" />
     <Compile Include="DifferentialEquations\RungeKutta4.cs" />
+    <Compile Include="LinearSystems\TDMAThomasAlgoritm.cs" />
     <Compile Include="Function.cs" />
     <Compile Include="Integration\Chebishev.cs" />
     <Compile Include="Integration\Simpson.cs" />
@@ -124,6 +132,15 @@
     <Compile Include="Statistics\DescriptiveStatisticsMedian.cs" />
     <Compile Include="Statistics\DescriptiveStatisticsMoments.cs" />
     <Compile Include="Statistics\DescriptiveStatisticsPercentile .cs" />
+    <Compile Include="DataMining\AntOptimization.cs" />
+    <Compile Include="Graphs\BellmanFord.cs" />
+    <Compile Include="Sorting\BubbleSort.cs" />
+    <Compile Include="Graphs\Deikstra2.cs" />
+    <Compile Include="Graphs\Dijkstra.cs" />
+    <Compile Include="DataMining\GeneticAlgorithm.cs" />
+    <Compile Include="Graphs\Kruskal.cs" />
+    <Compile Include="Graphs\Kruskal2.cs" />
+    <Compile Include="MathExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -141,6 +158,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uncategorized\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
