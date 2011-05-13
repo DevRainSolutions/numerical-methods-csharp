@@ -121,6 +121,7 @@
     <Compile Include="NonLinear\Secant.cs" />
     <Compile Include="Optimizing\Brentopt.cs" />
     <Compile Include="Optimizing\ChromosomeManager.cs" />
+    <Compile Include="Optimizing\CMAESOptimizer.cs" />
     <Compile Include="Optimizing\GeneticOptimizer.cs" />
     <Compile Include="Optimizing\GoldenSection.cs" />
     <Compile Include="Optimizing\HillClimbingOptimizer.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Optimizing\MinimizingPoint.cs" />
     <Compile Include="Optimizing\MinimizingPointFactory.cs" />
     <Compile Include="Optimizing\MinimizingVector.cs" />
+    <Compile Include="Optimizing\MultidimensionalOptimizer.cs" />
     <Compile Include="Optimizing\MultiVariableGeneralOptimizer.cs" />
     <Compile Include="Optimizing\MultiVariableOptimizer.cs" />
     <Compile Include="Optimizing\OneVariableFunctionOptimizer.cs" />

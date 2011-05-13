@@ -125,6 +125,7 @@ namespace NumericalMethods.MatrixAlgebra
         public double this[int n, int m]
         {
             get { return _components[n, m]; }
+            set { _components[n, m] = value; }
         }
 
         /// @return double
@@ -489,6 +490,46 @@ namespace NumericalMethods.MatrixAlgebra
                 }
             }
             return newComponents;
+        }
+
+        ///<summary>
+        ///Set all components outside the main diagonal to zero and the components in the main diagonal to 1.
+        ///if the instance is not a squared matrix returns exception (note that this is an "in-place" operation).
+        ///</summary>
+        public void setToIdentity()
+        {
+            if (!this.IsSquare)
+                throw new InvalidOperationException("The setToIdentity() method is only valid on squared matrices.");
+            else
+            {
+                for (int i = 0; i < this.Rows ; i++)
+                {
+                    for (int j = 0; j < this.Columns; j++)
+                    {
+                        if(i==j)
+                            _components[i, j] = 1.0;
+                        else
+                            _components[i, j] = 0.0;
+                    }
+                }
+            }
+        }
+
+        ///<summary>
+        ///Set all components to val (note that this is an "in-place" operation).
+        ///</summary>
+        ///<param name="val">
+        ///desired value to which all elements in the matrix will be set to.
+        /// </param>
+        public void setTo(double val)
+        {
+            for (int i = 0; i < this.Rows; i++)
+            {
+                for (int j = 0; j < this.Columns; j++)
+                {
+                    _components[i, j] = val;
+                }
+            }
         }
     }
 }
